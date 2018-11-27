@@ -15,11 +15,13 @@
 /** Maximale Puffergröße. */
 #define BUF_SIZE 4096
 
-/** Index für das Byte. */
-int index = 0;
+/** Index für den in_puffer. */
+int index_byte = 0;
 
-/** Position für das Bit. */
-int position = 0;
+/** Index für den out_puffer. */
+int index_bit = 0;
+/** Position des Bits im Byte. */
+int position_bit = 0;
 
 /** Füllstand für den in_puffer. */
 int fill_level_in_puffer = 0;
@@ -71,6 +73,7 @@ unsigned char read_char(void);
 
 /**
  * Schreibt ein Byte an die nächste freie Position in den Ausgabepuffer.
+ * @param c Das zu schreibende Byte.
  */
 void write_char(unsigned char c);
 
@@ -90,16 +93,21 @@ BIT read_bit(void);
 
 /**
  * Schreibt ein Bit an die nächste freie Position in den Ausgabepuffer.
+ * @param c Das zu schreibende Bit.
  */
 void write_bit(BIT c);
 
 /**
  * Kopiert den Eingabepuffer byteweise in den Ausgabepuffer.
+ * @param in Das zu kopierende Array.
+ * @param out Das fertig kopierte Array.
  */
 void copy_chars(char in[], char out[]);
 
 /**
  * Kopiert den EIngabepuffer bitweise in den Ausgabepuffer.
+ * @param in Das zu kopierende Array.
+ * @param out Das fertig kopierte Array.
  */
 void copy_bits(char in[], char out[]);
 
@@ -110,6 +118,8 @@ void reset(void);
 
 /**
  * Hier werden alle Funktionen aufgerufen.
+ * @param argc Anzahl von übergebenen Argumenten.
+ * @param argv Die einzelnen übergebenen Argumente.
  */
 int main(int argc, char** argv)
 {
@@ -117,8 +127,9 @@ int main(int argc, char** argv)
 
     char in[] = "abcdefghijklmnopqrstuvwxyz";
     char out[BUF_SIZE] = {0};
-    copy_bits(in, out);
-    copy_chars(in, out);
+
+//    copy_chars(in, out);
+        copy_bits(in, out);
 
     for (i = 0; i < fill_level_in_puffer; i++)
     {
@@ -130,8 +141,9 @@ int main(int argc, char** argv)
     {
         char in2[] = "0123456789";
         char out2[BUF_SIZE] = {0};
-        copy_bits(in2, out2);
-        copy_chars(in2, out2);
+
+//        copy_chars(in2, out2);
+                copy_bits(in2, out2);
 
         for (i = 0; i < fill_level_in_puffer; i++)
         {
@@ -144,91 +156,70 @@ int main(int argc, char** argv)
 
 BIT get_bit(unsigned char c, int pos)
 {
-    BIT bit;
-
-    unsigned char shift_byte = 0x80;
-    shift_byte = shift_byte >> pos;
-
-    shift_byte = c & shift_byte;
-
-    shift_byte = shift_byte >> (7 - pos);
-
-    bit = shift_byte;
-
-    return bit;
+    return (c & (0x80 >> pos)) >> (7 - pos);
 }
 
 unsigned char put_bit(unsigned char c, BIT bit, int pos)
 {
-    unsigned char changed_byte = 0x80;
-    changed_byte = changed_byte >> pos;
-
-    if (bit == ON)
-    {
-        changed_byte = c | changed_byte;
-    }
-    if (bit == OFF)
-    {
-        changed_byte = c & ~changed_byte;
-    }
-
-    return changed_byte;
+    return (bit == ON)
+            ? c | (0x80 >> pos)
+            : c & ~(0x80 >> pos);
 }
 
 bool has_next_char(void)
 {
-    bool has_next_char = false;
-
-    if (index < fill_level_in_puffer)
-    {
-        has_next_char = true;
-    }
-
-    return has_next_char;
+    return index_byte < fill_level_in_puffer;
 }
 
 unsigned char read_char(void)
 {
-    return in_puffer[index];
+    return in_puffer[index_byte];
 }
 
 void write_char(unsigned char c)
 {
-    out_puffer[index] = c;
+    out_puffer[index_byte] = c;
+    fill_level_out_puffer++;
 }
 
 bool has_next_bit(void)
 {
     bool has_next_bit = false;
 
-    if (position > 7)
+    if (position_bit > 7)
     {
-        index++;
-        position = 0;
+        index_bit++;
+        position_bit = 0;
     }
 
-    if (index < fill_level_in_puffer)
+    if (index_bit < fill_level_in_puffer)
     {
-        if (get_bit(in_puffer[index], position) == 0
-                || get_bit(in_puffer[index], position) == 1)
+        if (get_bit(in_puffer[index_bit], position_bit) == 0
+                || get_bit(in_puffer[index_bit], position_bit) == 1)
         {
             has_next_bit = true;
         }
     }
 
-    position++;
+    position_bit++;
 
     return has_next_bit;
+    
+//    return get_bit(in_puffer[index_bit], position_bit) == 0
+//            || get_bit(in_puffer[index_bit], position_bit) == 1
+//            ? true
+//            : false;
 }
 
 BIT read_bit(void)
 {
-    return get_bit(in_puffer[index], position);
+    return get_bit(in_puffer[index_bit], position_bit);
 }
 
 void write_bit(BIT c)
 {
-    out_puffer[index] = put_bit(out_puffer[index], c, position);
+    out_puffer[index_bit] = put_bit(out_puffer[index_bit], c, position_bit);
+    fill_level_out_puffer = index_bit + 1;
 }
 
 void copy_chars(char in[], char out[])
@@ -241,16 +232,16 @@ void copy_chars(char in[], char out[])
     strncpy((char*) in_puffer, (char*) in, length);
 
     fill_level_in_puffer = length;
-    fill_level_out_puffer = length;
-
 
     while (has_next_char())
     {
         c = read_char();
         write_char(c);
 
-        index++;
+        index_byte++;
     }
+    
+    printf("\n%d\n", fill_level_out_puffer);
 
     strncpy((char*) out, (char*) out_puffer, length);
 }
@@ -265,28 +256,24 @@ void copy_bits(char in[], char out[])
     strncpy((char*) in_puffer, (char*) in, length);
 
     fill_level_in_puffer = length;
-    fill_level_out_puffer = length;
 
     while (has_next_bit())
     {
         c = read_bit();
         write_bit(c);
     }
+    
+    printf("\n%d\n", fill_level_out_puffer);
 
     strncpy((char*) out, (char*) out_puffer, length);
 }
 
 void reset(void)
 {
-//    int i;
-    //    for (i = 0; i < BUF_SIZE; i++)
-    //    {
-    //        in_puffer[i] = 0;
-    //        out_puffer[i] = 0;
-    //    }
-
-    index = 0;
-    position = 0;
+    index_byte = 0;
+    
+    index_bit = 0;
+    position_bit = 0;
 
     fill_level_out_puffer = 0;
     fill_level_in_puffer = 0;
