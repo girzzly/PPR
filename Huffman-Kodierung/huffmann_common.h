@@ -23,6 +23,8 @@
 
 #define XPRINTLN(P) printf("%x\n", (P) )
 
+#define BR printf("\n")
+
 /** Bitrepräsentierung. */
 typedef enum
 {

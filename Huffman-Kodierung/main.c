@@ -18,14 +18,6 @@
 #include "huffmann.h"
 #include "io.h"
 
-/** Index für den in_puffer. */
-int index_byte = 0;
-
-/** Füllstand für den in_puffer. */
-int fill_level_in_puffer = 0;
-/** Füllstand für den out_puffer. */
-int fill_level_out_puffer = 0;
-
 /**
  * Hier werden alle Funktionen aufgerufen.
  * @param argc Anzahl von übergebenen Argumenten.
@@ -46,7 +38,7 @@ int main(int argc, char** argv)
         CPRINT(out[i]);
     }
 
-    printf("\n");
+    BR;
 
     {
         char in2[] = "0123456789";
