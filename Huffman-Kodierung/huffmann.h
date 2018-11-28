@@ -1,7 +1,7 @@
 /**  
  * @file huffmann.h
  * 
- * In diesem Modul...
+ * Im Modul huffman wird die Komprimierung und Dekomprimierung realisiert.
  * 
  * @author Dominik Krakau
  *

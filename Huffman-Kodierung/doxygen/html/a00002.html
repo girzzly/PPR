@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>io.c-Dateireferenz</title>
+<title>huffmann.c-Dateireferenz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -50,120 +50,39 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Makrodefinitionen</a> &#124;
-<a href="#enum-members">AufzÃ¤hlungen</a> &#124;
-<a href="#func-members">Funktionen</a> &#124;
-<a href="#var-members">Variablen</a>  </div>
+<a href="#func-members">Funktionen</a>  </div>
   <div class="headertitle">
-<div class="title">io.c-Dateireferenz</div>  </div>
+<div class="title">huffmann.c-Dateireferenz</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00008_source.html">huffmann_common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00005_source.html">huffmann.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00014_source.html">io.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include-AbhÃ¤ngigkeitsdiagramm fÃ¼r io.c:</div>
+Include-AbhÃ¤ngigkeitsdiagramm fÃ¼r huffmann.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00003.png" border="0" usemap="#io_8c" alt=""/></div>
-<map name="io_8c" id="io_8c">
+<div class="center"><img src="a00003.png" border="0" usemap="#huffmann_8c" alt=""/></div>
+<map name="huffmann_8c" id="huffmann_8c">
+<area shape="rect" id="node4" href="a00008.html" title="huffmann_common.h" alt="" coords="121,229,264,256"/>
+<area shape="rect" id="node5" href="a00005.html" title="huffmann.h" alt="" coords="231,80,317,107"/>
+<area shape="rect" id="node6" href="a00014.html" title="io.h" alt="" coords="278,155,321,181"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Makrodefinitionen</h2></td></tr>
-<tr class="memitem:a6821bafc3c88dfb2e433a095df9940c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a6821bafc3c88dfb2e433a095df9940c6">BUF_SIZE</a>&#160;&#160;&#160;4096</td></tr>
-<tr class="separator:a6821bafc3c88dfb2e433a095df9940c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-AufzÃ¤hlungen</h2></td></tr>
-<tr class="memitem:a42de1d3bbaa4989a0bb0ea5c6923dccb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccb">BIT</a> { <a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccbaac132f2982b98bcaa3445e535a03ff75">OFF</a>, 
-<a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccba977d478dacaae531f95695750d1e9d03">ON</a>
- }</td></tr>
-<tr class="separator:a42de1d3bbaa4989a0bb0ea5c6923dccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funktionen</h2></td></tr>
-<tr class="memitem:a459bd55e5224f4c74d0a3c9ca7f215ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccb">BIT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a459bd55e5224f4c74d0a3c9ca7f215ae">get_bit</a> (unsigned char c, int pos)</td></tr>
-<tr class="separator:a459bd55e5224f4c74d0a3c9ca7f215ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e7eb3fb2e349fedc5f59dbdf1e585b9"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a4e7eb3fb2e349fedc5f59dbdf1e585b9">put_bit</a> (unsigned char c, <a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccb">BIT</a> bit, int pos)</td></tr>
-<tr class="separator:a4e7eb3fb2e349fedc5f59dbdf1e585b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1bce45959d6574dba72ecbd37c2e8d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#ac1bce45959d6574dba72ecbd37c2e8d5">has_next_char</a> (void)</td></tr>
-<tr class="separator:ac1bce45959d6574dba72ecbd37c2e8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a882aef20c6681d7b896a7531407d96fa"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a882aef20c6681d7b896a7531407d96fa">read_char</a> (void)</td></tr>
-<tr class="separator:a882aef20c6681d7b896a7531407d96fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35537c78702136e92f57d1d4c2d15caf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a35537c78702136e92f57d1d4c2d15caf">write_char</a> (unsigned char c)</td></tr>
-<tr class="separator:a35537c78702136e92f57d1d4c2d15caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c5171055d16b868c0950ebaa863fb9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a7c5171055d16b868c0950ebaa863fb9a">has_next_bit</a> (void)</td></tr>
-<tr class="separator:a7c5171055d16b868c0950ebaa863fb9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af327fb024bf283d68b012947f90b695f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccb">BIT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#af327fb024bf283d68b012947f90b695f">read_bit</a> (void)</td></tr>
-<tr class="separator:af327fb024bf283d68b012947f90b695f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a412951eee447aafec3febe9ea6d8648a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a412951eee447aafec3febe9ea6d8648a">write_bit</a> (<a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccb">BIT</a> c)</td></tr>
-<tr class="separator:a412951eee447aafec3febe9ea6d8648a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e0f74a05ecef18ee19d91ab3a87d5a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a3e0f74a05ecef18ee19d91ab3a87d5a3">copy_chars</a> (char in[], char out[])</td></tr>
 <tr class="separator:a3e0f74a05ecef18ee19d91ab3a87d5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0edda638e496e3309858596598ea3af8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a0edda638e496e3309858596598ea3af8">copy_bits</a> (char in[], char out[])</td></tr>
 <tr class="separator:a0edda638e496e3309858596598ea3af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3aea9deb2a0bfea9ff05a898f4822e31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a3aea9deb2a0bfea9ff05a898f4822e31">reset</a> (void)</td></tr>
-<tr class="separator:a3aea9deb2a0bfea9ff05a898f4822e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
-<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variablen</h2></td></tr>
-<tr class="memitem:a750b5d744c39a06bfb13e6eb010e35d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a> = 0</td></tr>
-<tr class="separator:a750b5d744c39a06bfb13e6eb010e35d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a401e942526aac47cef94f478182486e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a401e942526aac47cef94f478182486e7">position</a> = 0</td></tr>
-<tr class="separator:a401e942526aac47cef94f478182486e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabed9778e3294b125b25a1beac48a51d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#aabed9778e3294b125b25a1beac48a51d">fill_level_in_puffer</a> = 0</td></tr>
-<tr class="separator:aabed9778e3294b125b25a1beac48a51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f7799d60cac863efaeeb2434e9ca960"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a7f7799d60cac863efaeeb2434e9ca960">in_puffer</a> [<a class="el" href="a00002.html#a6821bafc3c88dfb2e433a095df9940c6">BUF_SIZE</a>] = {0}</td></tr>
-<tr class="separator:a7f7799d60cac863efaeeb2434e9ca960"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7ed12726e3361459b275fb5a0cfcf50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#ab7ed12726e3361459b275fb5a0cfcf50">fill_level_out_puffer</a> = 0</td></tr>
-<tr class="separator:ab7ed12726e3361459b275fb5a0cfcf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9ebd992f20f5e7d5175646ab0b20c6e"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#ac9ebd992f20f5e7d5175646ab0b20c6e">out_puffer</a> [<a class="el" href="a00002.html#a6821bafc3c88dfb2e433a095df9940c6">BUF_SIZE</a>] = {0}</td></tr>
-<tr class="separator:ac9ebd992f20f5e7d5175646ab0b20c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">AusfÃ¼hrliche Beschreibung</h2>
-<div class="textblock"><dl class="section author"><dt>Autor</dt><dd>Dominik</dd></dl>
-<dl class="section date"><dt>Datum</dt><dd>Created on 6. November 2018, 12:25 </dd></dl>
-</div><h2 class="groupheader">Makro-Dokumentation</h2>
-<a id="a6821bafc3c88dfb2e433a095df9940c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6821bafc3c88dfb2e433a095df9940c6">&#9670;&nbsp;</a></span>BUF_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUF_SIZE&#160;&#160;&#160;4096</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Maximale Puffergröße. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Dokumentation der AufzÃ¤hlungstypen</h2>
-<a id="a42de1d3bbaa4989a0bb0ea5c6923dccb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42de1d3bbaa4989a0bb0ea5c6923dccb">&#9670;&nbsp;</a></span>BIT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccb">BIT</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Bitrepräsentierung. </p>
-<table class="fieldtable">
-<tr><th colspan="2">AufzÃ¤hlungswerte</th></tr><tr><td class="fieldname"><a id="a42de1d3bbaa4989a0bb0ea5c6923dccbaac132f2982b98bcaa3445e535a03ff75"></a>OFF&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a42de1d3bbaa4989a0bb0ea5c6923dccba977d478dacaae531f95695750d1e9d03"></a>ON&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Dokumentation der Funktionen</h2>
+<div class="textblock"><p>Im Modul huffman wird die Komprimierung und Dekomprimierung realisiert.</p>
+<dl class="section author"><dt>Autor</dt><dd>Dominik Krakau</dd></dl>
+<dl class="section date"><dt>Datum</dt><dd>2018-11-27 </dd></dl>
+</div><h2 class="groupheader">Dokumentation der Funktionen</h2>
 <a id="a0edda638e496e3309858596598ea3af8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0edda638e496e3309858596598ea3af8">&#9670;&nbsp;</a></span>copy_bits()</h2>
 
@@ -189,26 +108,24 @@ Variablen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Kopiert den EIngabepuffer bitweise in den Ausgabepuffer. </p>
+<p>Kopiert den EIngabepuffer bitweise in den Ausgabepuffer. </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>Das zu kopierende Array. </td></tr>
+    <tr><td class="paramname">out</td><td>Das fertig kopierte Array. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
 <div class="center"><img src="a00002_a0edda638e496e3309858596598ea3af8_cgraph.png" border="0" usemap="#a00002_a0edda638e496e3309858596598ea3af8_cgraph" alt=""/></div>
 <map name="a00002_a0edda638e496e3309858596598ea3af8_cgraph" id="a00002_a0edda638e496e3309858596598ea3af8_cgraph">
-<area shape="rect" id="node2" href="a00002.html#a3aea9deb2a0bfea9ff05a898f4822e31" title="reset" alt="" coords="150,5,201,32"/>
-<area shape="rect" id="node3" href="a00002.html#a7c5171055d16b868c0950ebaa863fb9a" title="has_next_bit" alt="" coords="128,56,223,83"/>
-<area shape="rect" id="node5" href="a00002.html#af327fb024bf283d68b012947f90b695f" title="read_bit" alt="" coords="141,107,210,133"/>
-<area shape="rect" id="node6" href="a00002.html#a412951eee447aafec3febe9ea6d8648a" title="write_bit" alt="" coords="139,157,211,184"/>
-<area shape="rect" id="node4" href="a00002.html#a459bd55e5224f4c74d0a3c9ca7f215ae" title="get_bit" alt="" coords="271,81,332,108"/>
-<area shape="rect" id="node7" href="a00002.html#a4e7eb3fb2e349fedc5f59dbdf1e585b9" title="put_bit" alt="" coords="271,157,332,184"/>
-</map>
-</div>
-<div class="dynheader">
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a0edda638e496e3309858596598ea3af8_icgraph.png" border="0" usemap="#a00002_a0edda638e496e3309858596598ea3af8_icgraph" alt=""/></div>
-<map name="a00002_a0edda638e496e3309858596598ea3af8_icgraph" id="a00002_a0edda638e496e3309858596598ea3af8_icgraph">
-<area shape="rect" id="node2" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="128,5,179,32"/>
+<area shape="rect" id="node2" href="a00011.html#a7415def789184df55b5ef296ec11bbcc" title="put_puffer_in" alt="" coords="132,5,231,32"/>
+<area shape="rect" id="node4" href="a00011.html#a7c5171055d16b868c0950ebaa863fb9a" title="has_next_bit" alt="" coords="134,56,229,83"/>
+<area shape="rect" id="node5" href="a00011.html#af327fb024bf283d68b012947f90b695f" title="read_bit" alt="" coords="147,107,216,133"/>
+<area shape="rect" id="node6" href="a00011.html#a412951eee447aafec3febe9ea6d8648a" title="write_bit" alt="" coords="145,157,217,184"/>
+<area shape="rect" id="node7" href="a00011.html#aa16077187079a05930d28047298db6d5" title="put_puffer_out" alt="" coords="128,208,235,235"/>
+<area shape="rect" id="node3" href="a00011.html#aebbba89eb574f823428be75d0ffc10c9" title="reset" alt="" coords="283,5,333,32"/>
 </map>
 </div>
 
@@ -239,16 +156,24 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Kopiert den Eingabepuffer byteweise in den Ausgabepuffer. </p>
+<p>Kopiert den Eingabepuffer byteweise in den Ausgabepuffer. </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>Das zu kopierende Array. </td></tr>
+    <tr><td class="paramname">out</td><td>Das fertig kopierte Array. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
 <div class="center"><img src="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_cgraph.png" border="0" usemap="#a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_cgraph" alt=""/></div>
 <map name="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_cgraph" id="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_cgraph">
-<area shape="rect" id="node2" href="a00002.html#a3aea9deb2a0bfea9ff05a898f4822e31" title="reset" alt="" coords="167,5,218,32"/>
-<area shape="rect" id="node3" href="a00002.html#ac1bce45959d6574dba72ecbd37c2e8d5" title="has_next_char" alt="" coords="140,56,245,83"/>
-<area shape="rect" id="node4" href="a00002.html#a882aef20c6681d7b896a7531407d96fa" title="read_char" alt="" coords="153,107,233,133"/>
-<area shape="rect" id="node5" href="a00002.html#a35537c78702136e92f57d1d4c2d15caf" title="write_char" alt="" coords="151,157,234,184"/>
+<area shape="rect" id="node2" href="a00011.html#a7415def789184df55b5ef296ec11bbcc" title="put_puffer_in" alt="" coords="144,5,243,32"/>
+<area shape="rect" id="node4" href="a00011.html#ac1bce45959d6574dba72ecbd37c2e8d5" title="has_next_char" alt="" coords="141,56,246,83"/>
+<area shape="rect" id="node5" href="a00011.html#a882aef20c6681d7b896a7531407d96fa" title="read_char" alt="" coords="153,107,233,133"/>
+<area shape="rect" id="node6" href="a00011.html#a35537c78702136e92f57d1d4c2d15caf" title="write_char" alt="" coords="152,157,235,184"/>
+<area shape="rect" id="node7" href="a00011.html#aa16077187079a05930d28047298db6d5" title="put_puffer_out" alt="" coords="140,208,247,235"/>
+<area shape="rect" id="node3" href="a00011.html#aebbba89eb574f823428be75d0ffc10c9" title="reset" alt="" coords="295,5,345,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -256,475 +181,16 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
 <div class="center"><img src="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_icgraph.png" border="0" usemap="#a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_icgraph" alt=""/></div>
 <map name="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_icgraph" id="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_icgraph">
-<area shape="rect" id="node2" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="140,5,191,32"/>
+<area shape="rect" id="node2" href="a00017.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="140,5,191,32"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="a459bd55e5224f4c74d0a3c9ca7f215ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a459bd55e5224f4c74d0a3c9ca7f215ae">&#9670;&nbsp;</a></span>get_bit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccb">BIT</a> get_bit </td>
-          <td>(</td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Diese Funktion gibt ein Bit aus einem übergebenen Byte an einer bestimmten Position wieder. </p><dl class="params"><dt>Parameter</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>Das übergebene Byte. </td></tr>
-    <tr><td class="paramname">pos</td><td>Die Position des Bits (0 höchstwertige und 7 niederwertigste Bitselle). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>RÃ¼ckgabe</dt><dd>Liefert das Bit an der anggebenen Posiion aus einem übergebenen Byte. </dd></dl>
-<div class="dynheader">
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a459bd55e5224f4c74d0a3c9ca7f215ae_icgraph.png" border="0" usemap="#a00002_a459bd55e5224f4c74d0a3c9ca7f215ae_icgraph" alt=""/></div>
-<map name="a00002_a459bd55e5224f4c74d0a3c9ca7f215ae_icgraph" id="a00002_a459bd55e5224f4c74d0a3c9ca7f215ae_icgraph">
-<area shape="rect" id="node2" href="a00002.html#a7c5171055d16b868c0950ebaa863fb9a" title="has_next_bit" alt="" coords="115,5,209,32"/>
-<area shape="rect" id="node5" href="a00002.html#af327fb024bf283d68b012947f90b695f" title="read_bit" alt="" coords="127,56,197,83"/>
-<area shape="rect" id="node3" href="a00002.html#a0edda638e496e3309858596598ea3af8" title="copy_bits" alt="" coords="257,31,332,57"/>
-<area shape="rect" id="node4" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="380,31,431,57"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a7c5171055d16b868c0950ebaa863fb9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c5171055d16b868c0950ebaa863fb9a">&#9670;&nbsp;</a></span>has_next_bit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool has_next_bit </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Gibt an, ob noch weitere Bits aus dem Eingabepuffer gelesen werden können. </p><dl class="section return"><dt>RÃ¼ckgabe</dt><dd>true falls nächstes Bit vorhanden, false falls nächstes Bit nicht vorhanden. </dd></dl>
-<div class="dynheader">
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a7c5171055d16b868c0950ebaa863fb9a_cgraph.png" border="0" usemap="#a00002_a7c5171055d16b868c0950ebaa863fb9a_cgraph" alt=""/></div>
-<map name="a00002_a7c5171055d16b868c0950ebaa863fb9a_cgraph" id="a00002_a7c5171055d16b868c0950ebaa863fb9a_cgraph">
-<area shape="rect" id="node2" href="a00002.html#a459bd55e5224f4c74d0a3c9ca7f215ae" title="get_bit" alt="" coords="148,5,209,32"/>
-</map>
-</div>
-<div class="dynheader">
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a7c5171055d16b868c0950ebaa863fb9a_icgraph.png" border="0" usemap="#a00002_a7c5171055d16b868c0950ebaa863fb9a_icgraph" alt=""/></div>
-<map name="a00002_a7c5171055d16b868c0950ebaa863fb9a_icgraph" id="a00002_a7c5171055d16b868c0950ebaa863fb9a_icgraph">
-<area shape="rect" id="node2" href="a00002.html#a0edda638e496e3309858596598ea3af8" title="copy_bits" alt="" coords="148,5,223,32"/>
-<area shape="rect" id="node3" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="271,5,321,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ac1bce45959d6574dba72ecbd37c2e8d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1bce45959d6574dba72ecbd37c2e8d5">&#9670;&nbsp;</a></span>has_next_char()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool has_next_char </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Gibt an ob noch weitere Bytes aus dem Eingabepuffer gelesen werden können. </p><dl class="section return"><dt>RÃ¼ckgabe</dt><dd>true falls nächstes Byte vorhanden, false falls nächstes Byte nicht vorhanden. </dd></dl>
-<div class="dynheader">
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_ac1bce45959d6574dba72ecbd37c2e8d5_icgraph.png" border="0" usemap="#a00002_ac1bce45959d6574dba72ecbd37c2e8d5_icgraph" alt=""/></div>
-<map name="a00002_ac1bce45959d6574dba72ecbd37c2e8d5_icgraph" id="a00002_ac1bce45959d6574dba72ecbd37c2e8d5_icgraph">
-<area shape="rect" id="node2" href="a00002.html#a3e0f74a05ecef18ee19d91ab3a87d5a3" title="copy_chars" alt="" coords="159,5,245,32"/>
-<area shape="rect" id="node3" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="293,5,344,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>argc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>argv</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Hier werden alle Funktionen aufgerufen. </p>
-<div class="dynheader">
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#a00002_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
-<map name="a00002_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="a00002_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node2" href="a00002.html#a0edda638e496e3309858596598ea3af8" title="copy_bits" alt="" coords="110,107,185,133"/>
-<area shape="rect" id="node9" href="a00002.html#a3e0f74a05ecef18ee19d91ab3a87d5a3" title="copy_chars" alt="" coords="104,208,191,235"/>
-<area shape="rect" id="node3" href="a00002.html#a3aea9deb2a0bfea9ff05a898f4822e31" title="reset" alt="" coords="266,157,317,184"/>
-<area shape="rect" id="node4" href="a00002.html#a7c5171055d16b868c0950ebaa863fb9a" title="has_next_bit" alt="" coords="244,5,339,32"/>
-<area shape="rect" id="node6" href="a00002.html#af327fb024bf283d68b012947f90b695f" title="read_bit" alt="" coords="257,56,326,83"/>
-<area shape="rect" id="node7" href="a00002.html#a412951eee447aafec3febe9ea6d8648a" title="write_bit" alt="" coords="255,107,327,133"/>
-<area shape="rect" id="node5" href="a00002.html#a459bd55e5224f4c74d0a3c9ca7f215ae" title="get_bit" alt="" coords="392,31,453,57"/>
-<area shape="rect" id="node8" href="a00002.html#a4e7eb3fb2e349fedc5f59dbdf1e585b9" title="put_bit" alt="" coords="392,107,453,133"/>
-<area shape="rect" id="node10" href="a00002.html#ac1bce45959d6574dba72ecbd37c2e8d5" title="has_next_char" alt="" coords="239,208,344,235"/>
-<area shape="rect" id="node11" href="a00002.html#a882aef20c6681d7b896a7531407d96fa" title="read_char" alt="" coords="251,259,331,285"/>
-<area shape="rect" id="node12" href="a00002.html#a35537c78702136e92f57d1d4c2d15caf" title="write_char" alt="" coords="250,309,333,336"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a4e7eb3fb2e349fedc5f59dbdf1e585b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e7eb3fb2e349fedc5f59dbdf1e585b9">&#9670;&nbsp;</a></span>put_bit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned char put_bit </td>
-          <td>(</td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccb">BIT</a>&#160;</td>
-          <td class="paramname"><em>bit</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Diese Funktion setzt ein Bit an einer bestimmten Position eines übergebnenen Byte. </p><dl class="params"><dt>Parameter</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>Das übergebenene Byte. </td></tr>
-    <tr><td class="paramname">bit</td><td>Das Bit was gesetzt werden soll. </td></tr>
-    <tr><td class="paramname">pos</td><td>Die Position an der das Bit im übergebenen Byte gesetzt werden soll. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>RÃ¼ckgabe</dt><dd>Liefert das veränderte Byte zurück. </dd></dl>
-<div class="dynheader">
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a4e7eb3fb2e349fedc5f59dbdf1e585b9_icgraph.png" border="0" usemap="#a00002_a4e7eb3fb2e349fedc5f59dbdf1e585b9_icgraph" alt=""/></div>
-<map name="a00002_a4e7eb3fb2e349fedc5f59dbdf1e585b9_icgraph" id="a00002_a4e7eb3fb2e349fedc5f59dbdf1e585b9_icgraph">
-<area shape="rect" id="node2" href="a00002.html#a412951eee447aafec3febe9ea6d8648a" title="write_bit" alt="" coords="115,5,187,32"/>
-<area shape="rect" id="node3" href="a00002.html#a0edda638e496e3309858596598ea3af8" title="copy_bits" alt="" coords="235,5,309,32"/>
-<area shape="rect" id="node4" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="357,5,408,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="af327fb024bf283d68b012947f90b695f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af327fb024bf283d68b012947f90b695f">&#9670;&nbsp;</a></span>read_bit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccb">BIT</a> read_bit </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Liefert mit jedem Aufruf das nächste Bit aus dem Eingabepuffer. (Wird nur aufgerufen, wenn noch ein weiteres Bit vorhanden ist.) </p><dl class="section return"><dt>RÃ¼ckgabe</dt><dd>Das zu lesende Bit. </dd></dl>
-<div class="dynheader">
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_af327fb024bf283d68b012947f90b695f_cgraph.png" border="0" usemap="#a00002_af327fb024bf283d68b012947f90b695f_cgraph" alt=""/></div>
-<map name="a00002_af327fb024bf283d68b012947f90b695f_cgraph" id="a00002_af327fb024bf283d68b012947f90b695f_cgraph">
-<area shape="rect" id="node2" href="a00002.html#a459bd55e5224f4c74d0a3c9ca7f215ae" title="get_bit" alt="" coords="123,5,184,32"/>
-</map>
-</div>
-<div class="dynheader">
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_af327fb024bf283d68b012947f90b695f_icgraph.png" border="0" usemap="#a00002_af327fb024bf283d68b012947f90b695f_icgraph" alt=""/></div>
-<map name="a00002_af327fb024bf283d68b012947f90b695f_icgraph" id="a00002_af327fb024bf283d68b012947f90b695f_icgraph">
-<area shape="rect" id="node2" href="a00002.html#a0edda638e496e3309858596598ea3af8" title="copy_bits" alt="" coords="123,5,197,32"/>
-<area shape="rect" id="node3" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="245,5,296,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a882aef20c6681d7b896a7531407d96fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a882aef20c6681d7b896a7531407d96fa">&#9670;&nbsp;</a></span>read_char()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned char read_char </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Liefert mit jedem Aufruf das nächste Byte aus dem Eingabepuffer. (Wird nur aufgerufen, wenn noch ein weiteres Byte vorhanden ist.) </p><dl class="section return"><dt>RÃ¼ckgabe</dt><dd>Das zu lesende Byte. </dd></dl>
-<div class="dynheader">
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a882aef20c6681d7b896a7531407d96fa_icgraph.png" border="0" usemap="#a00002_a882aef20c6681d7b896a7531407d96fa_icgraph" alt=""/></div>
-<map name="a00002_a882aef20c6681d7b896a7531407d96fa_icgraph" id="a00002_a882aef20c6681d7b896a7531407d96fa_icgraph">
-<area shape="rect" id="node2" href="a00002.html#a3e0f74a05ecef18ee19d91ab3a87d5a3" title="copy_chars" alt="" coords="133,5,220,32"/>
-<area shape="rect" id="node3" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="268,5,319,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a3aea9deb2a0bfea9ff05a898f4822e31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3aea9deb2a0bfea9ff05a898f4822e31">&#9670;&nbsp;</a></span>reset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void reset </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Setzt die Puffer und golaben Variabeln zurück. </p>
-<div class="dynheader">
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a3aea9deb2a0bfea9ff05a898f4822e31_icgraph.png" border="0" usemap="#a00002_a3aea9deb2a0bfea9ff05a898f4822e31_icgraph" alt=""/></div>
-<map name="a00002_a3aea9deb2a0bfea9ff05a898f4822e31_icgraph" id="a00002_a3aea9deb2a0bfea9ff05a898f4822e31_icgraph">
-<area shape="rect" id="node2" href="a00002.html#a3e0f74a05ecef18ee19d91ab3a87d5a3" title="copy_chars" alt="" coords="104,5,191,32"/>
-<area shape="rect" id="node4" href="a00002.html#a0edda638e496e3309858596598ea3af8" title="copy_bits" alt="" coords="110,56,185,83"/>
-<area shape="rect" id="node3" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="239,31,289,57"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a412951eee447aafec3febe9ea6d8648a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a412951eee447aafec3febe9ea6d8648a">&#9670;&nbsp;</a></span>write_bit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void write_bit </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00002.html#a42de1d3bbaa4989a0bb0ea5c6923dccb">BIT</a>&#160;</td>
-          <td class="paramname"><em>c</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Schreibt ein Bit an die nächste freie Position in den Ausgabepuffer. </p>
-<div class="dynheader">
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a412951eee447aafec3febe9ea6d8648a_cgraph.png" border="0" usemap="#a00002_a412951eee447aafec3febe9ea6d8648a_cgraph" alt=""/></div>
-<map name="a00002_a412951eee447aafec3febe9ea6d8648a_cgraph" id="a00002_a412951eee447aafec3febe9ea6d8648a_cgraph">
-<area shape="rect" id="node2" href="a00002.html#a4e7eb3fb2e349fedc5f59dbdf1e585b9" title="put_bit" alt="" coords="125,5,187,32"/>
-</map>
-</div>
-<div class="dynheader">
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a412951eee447aafec3febe9ea6d8648a_icgraph.png" border="0" usemap="#a00002_a412951eee447aafec3febe9ea6d8648a_icgraph" alt=""/></div>
-<map name="a00002_a412951eee447aafec3febe9ea6d8648a_icgraph" id="a00002_a412951eee447aafec3febe9ea6d8648a_icgraph">
-<area shape="rect" id="node2" href="a00002.html#a0edda638e496e3309858596598ea3af8" title="copy_bits" alt="" coords="125,5,200,32"/>
-<area shape="rect" id="node3" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="248,5,299,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a35537c78702136e92f57d1d4c2d15caf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35537c78702136e92f57d1d4c2d15caf">&#9670;&nbsp;</a></span>write_char()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void write_char </td>
-          <td>(</td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>c</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Schreibt ein Byte an die nächste freie Position in den Ausgabepuffer. </p>
-<div class="dynheader">
-Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a35537c78702136e92f57d1d4c2d15caf_icgraph.png" border="0" usemap="#a00002_a35537c78702136e92f57d1d4c2d15caf_icgraph" alt=""/></div>
-<map name="a00002_a35537c78702136e92f57d1d4c2d15caf_icgraph" id="a00002_a35537c78702136e92f57d1d4c2d15caf_icgraph">
-<area shape="rect" id="node2" href="a00002.html#a3e0f74a05ecef18ee19d91ab3a87d5a3" title="copy_chars" alt="" coords="136,5,223,32"/>
-<area shape="rect" id="node3" href="a00002.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="271,5,321,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<h2 class="groupheader">Variablen-Dokumentation</h2>
-<a id="aabed9778e3294b125b25a1beac48a51d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabed9778e3294b125b25a1beac48a51d">&#9670;&nbsp;</a></span>fill_level_in_puffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int fill_level_in_puffer = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Füllstand für den in_puffer. </p>
-
-</div>
-</div>
-<a id="ab7ed12726e3361459b275fb5a0cfcf50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7ed12726e3361459b275fb5a0cfcf50">&#9670;&nbsp;</a></span>fill_level_out_puffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int fill_level_out_puffer = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Füllstand für den out_puffer. </p>
-
-</div>
-</div>
-<a id="a7f7799d60cac863efaeeb2434e9ca960"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f7799d60cac863efaeeb2434e9ca960">&#9670;&nbsp;</a></span>in_puffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned char in_puffer[<a class="el" href="a00002.html#a6821bafc3c88dfb2e433a095df9940c6">BUF_SIZE</a>] = {0}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Bytespeicher. </p>
-
-</div>
-</div>
-<a id="a750b5d744c39a06bfb13e6eb010e35d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a750b5d744c39a06bfb13e6eb010e35d0">&#9670;&nbsp;</a></span>index</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int index = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Index für das Byte. </p>
-
-</div>
-</div>
-<a id="ac9ebd992f20f5e7d5175646ab0b20c6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9ebd992f20f5e7d5175646ab0b20c6e">&#9670;&nbsp;</a></span>out_puffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned char out_puffer[<a class="el" href="a00002.html#a6821bafc3c88dfb2e433a095df9940c6">BUF_SIZE</a>] = {0}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Bitspeicher. </p>
-
-</div>
-</div>
-<a id="a401e942526aac47cef94f478182486e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a401e942526aac47cef94f478182486e7">&#9670;&nbsp;</a></span>position</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int position = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Position für das Bit. </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Die Nov 27 2018 15:27:42 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Nov 28 2018 20:30:26 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

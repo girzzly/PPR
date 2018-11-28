@@ -13,6 +13,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "huffmann_common.h"
 #include "huffmann.h"
@@ -25,36 +26,20 @@
  */
 int main(int argc, char** argv)
 {
-    int i;
-
     char in[] = "abcdefghijklmnopqrstuvwxyz";
     char out[BUF_SIZE] = {0};
-
     copy_chars(in, out);
-//        copy_bits(in, out);
-
-    for (i = 0; i < fill_level_out_puffer; i++)
-    {
-        CPRINT(out[i]);
-    }
-
-    BR;
+//    copy_bits(in, out);
+    PRINT_PUFFER(out, strlen((char*) out));
 
     {
         char in2[] = "0123456789";
         char out2[BUF_SIZE] = {0};
-
         copy_chars(in2, out2);
-//                copy_bits(in2, out2);
-
-        for (i = 0; i < fill_level_out_puffer; i++)
-        {
-            CPRINT(out2[i]);
-        }
+//        copy_bits(in2, out2);
+        PRINT_PUFFER(out2, strlen((char*) out2));
     }
-    
-//    XPRINTLN(fill_level_out_puffer);
 
-    return 0;
+    return (EXIT_SUCCESS);
 }
 

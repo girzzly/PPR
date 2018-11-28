@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['read_5fbit',['read_bit',['../a00002.html#af327fb024bf283d68b012947f90b695f',1,'io.c']]],
-  ['read_5fchar',['read_char',['../a00002.html#a882aef20c6681d7b896a7531407d96fa',1,'io.c']]],
-  ['reset',['reset',['../a00002.html#a3aea9deb2a0bfea9ff05a898f4822e31',1,'io.c']]]
+  ['position_5fbit',['position_bit',['../a00011.html#a85ee7d30ec90e0518a055d49e73960e8',1,'io.c']]],
+  ['print_5fpuffer',['PRINT_PUFFER',['../a00008.html#a94de978995aec921fa48784972003579',1,'huffmann_common.h']]],
+  ['put_5fbit',['PUT_BIT',['../a00011.html#a28f5c7e1f10c55811ebdc4b7517a9272',1,'io.c']]],
+  ['put_5fpuffer_5fin',['put_puffer_in',['../a00011.html#a7415def789184df55b5ef296ec11bbcc',1,'io.c']]],
+  ['put_5fpuffer_5fout',['put_puffer_out',['../a00011.html#aa16077187079a05930d28047298db6d5',1,'io.c']]]
 ];

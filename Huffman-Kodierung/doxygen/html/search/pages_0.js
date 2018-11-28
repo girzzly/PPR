@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hauptseite_2e',['Hauptseite.',['../index.html',1,'']]]
+  ['huffmann_2dcodierung_2e',['Huffmann-Codierung.',['../index.html',1,'']]]
 ];

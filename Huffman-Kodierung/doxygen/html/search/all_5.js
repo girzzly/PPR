@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['in_5fpuffer',['in_puffer',['../a00002.html#a7f7799d60cac863efaeeb2434e9ca960',1,'io.c']]],
-  ['index',['index',['../a00002.html#a750b5d744c39a06bfb13e6eb010e35d0',1,'io.c']]],
-  ['io_2ec',['io.c',['../a00002.html',1,'']]]
+  ['has_5fnext_5fbit',['has_next_bit',['../a00011.html#a7c5171055d16b868c0950ebaa863fb9a',1,'has_next_bit(void):&#160;io.c'],['../a00014.html#a7c5171055d16b868c0950ebaa863fb9a',1,'has_next_bit(void):&#160;io.c']]],
+  ['has_5fnext_5fchar',['has_next_char',['../a00011.html#ac1bce45959d6574dba72ecbd37c2e8d5',1,'has_next_char(void):&#160;io.c'],['../a00014.html#ac1bce45959d6574dba72ecbd37c2e8d5',1,'has_next_char(void):&#160;io.c']]],
+  ['huffmann_2ec',['huffmann.c',['../a00002.html',1,'']]],
+  ['huffmann_2eh',['huffmann.h',['../a00005.html',1,'']]],
+  ['huffmann_5fcommon_2eh',['huffmann_common.h',['../a00008.html',1,'']]],
+  ['huffmann_2dcodierung_2e',['Huffmann-Codierung.',['../index.html',1,'']]]
 ];
