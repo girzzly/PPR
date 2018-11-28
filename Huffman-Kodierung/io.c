@@ -13,6 +13,18 @@
 #include "huffmann_common.h"
 #include "io.h"
 
+/** Index für den out_puffer. */
+int index_bit = 0;
+/** Position des Bits im Byte. */
+int position_bit = 0;
+
+/** Bytespeicher. */
+unsigned char in_puffer[BUF_SIZE] = {0};
+
+/** Bitspeicher. */
+unsigned char out_puffer[BUF_SIZE] = {0};
+
+
 extern bool has_next_char(void)
 {
     return index_byte < fill_level_in_puffer;

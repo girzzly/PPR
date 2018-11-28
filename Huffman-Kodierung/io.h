@@ -33,23 +33,17 @@
 #define BUF_SIZE 4096
 
 /** Index für den in_puffer. */
-static int index_byte = 0;
+extern int index_byte;
 
 /** Index für den out_puffer. */
-static int index_bit = 0;
+extern int index_bit;
 /** Position des Bits im Byte. */
-static int position_bit = 0;
+extern int position_bit;
 
 /** Füllstand für den in_puffer. */
-static int fill_level_in_puffer = 0;
+extern int fill_level_in_puffer;
 /** Füllstand für den out_puffer. */
-static int fill_level_out_puffer = 0;
-
-/** Bytespeicher. */
-static unsigned char in_puffer[BUF_SIZE] = {0};
-
-/** Bitspeicher. */
-static unsigned char out_puffer[BUF_SIZE] = {0};
+extern int fill_level_out_puffer;
 
 /**
  * Gibt an ob noch weitere Bytes aus dem Eingabepuffer gelesen werden können.

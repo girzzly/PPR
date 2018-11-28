@@ -16,8 +16,15 @@
 
 #include "huffmann_common.h"
 #include "huffmann.h"
-
 #include "io.h"
+
+/** Index für den in_puffer. */
+int index_byte = 0;
+
+/** Füllstand für den in_puffer. */
+int fill_level_in_puffer = 0;
+/** Füllstand für den out_puffer. */
+int fill_level_out_puffer = 0;
 
 /**
  * Hier werden alle Funktionen aufgerufen.
@@ -34,7 +41,7 @@ int main(int argc, char** argv)
     copy_chars(in, out);
 //        copy_bits(in, out);
 
-    for (i = 0; i < fill_level_in_puffer; i++)
+    for (i = 0; i < fill_level_out_puffer; i++)
     {
         CPRINT(out[i]);
     }
@@ -48,13 +55,13 @@ int main(int argc, char** argv)
         copy_chars(in2, out2);
 //                copy_bits(in2, out2);
 
-        for (i = 0; i < fill_level_in_puffer; i++)
+        for (i = 0; i < fill_level_out_puffer; i++)
         {
             CPRINT(out2[i]);
         }
     }
     
-    XPRINTLN(fill_level_in_puffer);
+//    XPRINTLN(fill_level_out_puffer);
 
     return 0;
 }

@@ -15,6 +15,9 @@
 #include "huffmann.h"
 #include "io.h"
 
+extern unsigned char in_puffer[BUF_SIZE];
+extern unsigned char out_puffer[BUF_SIZE];
+
 extern void copy_chars(char in[], char out[])
 {
     unsigned char c;
@@ -34,7 +37,7 @@ extern void copy_chars(char in[], char out[])
         index_byte++;
     }
     
-    DPRINTLN(fill_level_in_puffer);
+//    DPRINTLN(fill_level_in_puffer);
 
     strncpy((char*) out, (char*) out_puffer, length);
 }
@@ -56,7 +59,7 @@ extern void copy_bits(char in[], char out[])
         write_bit(c);
     }
     
-    DPRINTLN(fill_level_in_puffer);
+//    DPRINTLN(fill_level_in_puffer);
 
     strncpy((char*) out, (char*) out_puffer, length);
 }
