@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>argument_validation.h</itemPath>
       <itemPath>huffmann.h</itemPath>
       <itemPath>huffmann_common.h</itemPath>
       <itemPath>io.h</itemPath>
@@ -15,6 +16,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>argument_validation.c</itemPath>
       <itemPath>huffmann.c</itemPath>
       <itemPath>io.c</itemPath>
       <itemPath>main.c</itemPath>
@@ -45,6 +47,10 @@
           <commandLine>-Wall</commandLine>
         </cTool>
       </compileType>
+      <item path="argument_validation.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="argument_validation.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="huffmann.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="huffmann.h" ex="false" tool="3" flavor2="0">
@@ -78,6 +84,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="argument_validation.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="argument_validation.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="huffmann.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="huffmann.h" ex="false" tool="3" flavor2="0">

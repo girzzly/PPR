@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/argument_validation.o \
 	${OBJECTDIR}/huffmann.o \
 	${OBJECTDIR}/io.o \
 	${OBJECTDIR}/main.o
@@ -63,6 +64,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/huffman-kodierung.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/huffman-kodierung ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/argument_validation.o: argument_validation.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/argument_validation.o argument_validation.c
 
 ${OBJECTDIR}/huffmann.o: huffmann.c
 	${MKDIR} -p ${OBJECTDIR}
