@@ -45,5 +45,15 @@ typedef enum
     ON
 } BIT;
 
+/** Programm Exit-Codes. */
+typedef enum
+{
+    SUCCESS_RUN,
+    UNKNOWN_ERROR,
+    ARGUMENTS_ERROR,
+    IO_ERROR,
+    COMPRESS_DECOMPRESS_ERROR
+} EXIT_CODES;
+
 #endif
 
