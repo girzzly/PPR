@@ -10,35 +10,33 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 
 #include "huffmann_common.h"
 #include "argument_validation.h"
+#include "io.h"
 
-/** Name der Input-Datei. */
+char output_filename[MAX_FILENAME_LENGTH] = {'\0'};
 char *input_filename = NULL;
 
-/** Name der Output-Datei. */
-char output_filename[MAX_FILENAME_LENGTH] = {'\0'};
+bool compress = false;
+bool decompress = false;
+bool info = false;
+bool help = false;
 
+bool level = true;
+int level_number = 2;
+
+bool output_comand = false;
+
+bool is_input_filename = false;
 
 EXIT_CODES process_arguments(int argc, char*** argv)
 {
     EXIT_CODES exit_code = SUCCESS_RUN;
 
-    bool compress = false;
-    bool decompress = false;
-    bool info = false;
-    bool help = false;
-
-    bool level = true;
-    int level_number = 2;
-
-    bool output_comand = false;
-
-    bool is_input_filename = false;
+    reset_values();
 
     int i;
     for (i = 1; i < argc; i++)
@@ -105,14 +103,23 @@ EXIT_CODES process_arguments(int argc, char*** argv)
                         else
                         {
                             // wrong level_number!
+                            level = false;
+                            level_number = 0;
                             exit_code = ARGUMENTS_ERROR;
                         }
                     }
                     else
                     {
                         // no level_number!
+                        level = false;
+                        level_number = 0;
                         exit_code = ARGUMENTS_ERROR;
                     }
+                }
+                else 
+                {
+                    // comand does not exsist or '-' sign but no comand!
+                    exit_code = ARGUMENTS_ERROR;
                 }
             }
             else if (***argv != '-' && i == argc - 1)
@@ -140,7 +147,7 @@ EXIT_CODES process_arguments(int argc, char*** argv)
         if (decompress && is_input_filename)
         {
             strcat(output_filename, ".hd\0");
-            
+
         }
         else
         {
@@ -163,9 +170,23 @@ EXIT_CODES process_arguments(int argc, char*** argv)
     printf("Level: %d   Level-Nr: %d\n", level, level_number);
     printf("Info: %d\n", info);
     printf("Help: %d\n", help);
-    printf("Output: %d   %s\n", output_comand, (char *)output_filename);
+    printf("Output: %d   %s\n", output_comand, (char *) output_filename);
     printf("Filename: %d   %s\n", is_input_filename, input_filename);
     printf("--------------------------------\n");
 
     return exit_code;
+}
+
+void reset_values() 
+{
+    compress = false;
+    decompress = false;
+    info = false;
+    help = false;
+
+    level = true;
+    level_number = 2;
+
+    output_comand = false;
+    is_input_filename = false;
 }

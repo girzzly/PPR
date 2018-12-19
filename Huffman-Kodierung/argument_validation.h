@@ -9,11 +9,34 @@
  * @date 2018-12-19
  */
 
-#ifndef ARGUMENT_VALIDATION_H
-#define ARGUMENT_VALIDATION_H
+#include <stdbool.h>
 
-/** Maximale Dateinamenlänge. */
-#define MAX_FILENAME_LENGTH 256
+#ifndef _ARGUMENT_VALIDATION_H
+#define _ARGUMENT_VALIDATION_H
+
+/** Zeigt an, ob komprimiert werden soll. */
+extern bool compress;
+
+/** Zeigt an, ob dekomprimiert werden soll. */
+extern bool decompress;
+
+/** Zeigt an, ob Infos ausgegeben werden sollen. */
+extern bool info;
+
+/** Zeigt an, ob die Programmhilfe ausgegeben werden soll. */
+extern bool help;
+
+/** Zeigt an, ob ein Level für die Komprimierung gesetzt werden soll. */
+extern bool level;
+
+/** Levelnummer der Komprimierung. */
+extern int level_number;
+
+/** Zeigt an, ob es ein -o Kommando gibt. */
+extern bool output_comand;
+
+/** Zeigt an, ob es sich um einen Input Filename handelt. */
+extern bool is_input_filename;
 
 /**
  * Diese Funktion überprüft die übergebenen Komandozeielnargumente auf
