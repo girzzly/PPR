@@ -15,10 +15,10 @@
 #define _ARGUMENT_VALIDATION_H
 
 /** Zeigt an, ob komprimiert werden soll. */
-extern bool compress;
+extern bool compressed;
 
 /** Zeigt an, ob dekomprimiert werden soll. */
-extern bool decompress;
+extern bool decompressed;
 
 /** Zeigt an, ob Infos ausgegeben werden sollen. */
 extern bool info;
@@ -47,6 +47,17 @@ extern bool is_input_filename;
  *         ARGUMENT_ERROR falls die Komandozeilen Fehler aufweisen.
  */
 extern EXIT_CODES process_arguments(int argc, char*** argv);
+
+/**
+ * Gibt Informationen über die Programmbenutzung am Bildschirm aus.
+ */
+extern void showHelp();
+
+/**
+ * Gibt Informationen über die Dateien aus.
+ * Größe der Eingabedatei, Größe der Ausgabedatei, Programmlaufzeit in Sekunden.
+ */
+extern void showInfo();
 
 #endif
 

@@ -19,6 +19,8 @@
 #include "huffmann.h"
 #include "io.h"
 
+bool compresed;
+
 /**
  * Hier werden alle Funktionen aufgerufen.
  * @param argc Anzahl von übergebenen Argumenten.
@@ -30,24 +32,39 @@ int main(int argc, char** argv)
 
     if (exit_code == SUCCESS_RUN)
     {
-        char in[] = "abcdefghijklmnopqrstuvwxyz";
-        char out[BUF_SIZE] = {0};
-        copy_chars(in, out);
-        //    copy_bits(in, out);
-        PRINT_PUFFER(out, strlen((char*) out));
-
-        {
-            char in2[] = "0123456789";
-            char out2[BUF_SIZE] = {0};
-            copy_chars(in2, out2);
-            //        copy_bits(in2, out2);
-            PRINT_PUFFER(out2, strlen((char*) out2));
+        
+        if(compresed) {
+            printf("compress? %d\n", compressed);
+            compress(input_filename, output_filename);
         }
+        else {
+            printf("compress? %d\n", compressed);
+            decompress(input_filename, output_filename);
+        }
+        
+//        open_infile(input_filename);
+//        open_outfile((char *)output_filename);
+        
+//        char in[] = "abcdefghijklmnopqrstuvwxyz";
+//        char out[BUF_SIZE] = {0};
+//        copy_chars(in, out);
+        //    copy_bits(in, out);
+//        PRINT_PUFFER(out, strlen((char*) out));
+
+//        {
+//            char in2[] = "0123456789";
+//            char out2[BUF_SIZE] = {0};
+//            copy_chars(in2, out2);
+            //        copy_bits(in2, out2);
+//            PRINT_PUFFER(out2, strlen((char*) out2));
+//        }
     }
-    else
-    {
-        printf("Program terminated with exit code %d.\n", exit_code);
-    }
+//    else
+//    {
+//        printf("Program terminated with exit code %d.\n", exit_code);
+//    }
+    
+    printf("Program terminated with exit code %d.\n", exit_code);
 
     return (exit_code);
 }

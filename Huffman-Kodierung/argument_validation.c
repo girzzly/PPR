@@ -18,10 +18,10 @@
 #include "io.h"
 
 char output_filename[MAX_FILENAME_LENGTH] = {'\0'};
-char *input_filename = NULL;
+char input_filename[MAX_FILENAME_LENGTH] = {'\0'};
 
-bool compress = false;
-bool decompress = false;
+bool compressed = false;
+bool decompressed = false;
 bool info = false;
 bool help = false;
 
@@ -31,6 +31,11 @@ int level_number = 2;
 bool output_comand = false;
 
 bool is_input_filename = false;
+
+/**
+ * Setzt die Variablenwerte zurück.
+ */
+static void reset_values();
 
 EXIT_CODES process_arguments(int argc, char*** argv)
 {
@@ -45,21 +50,21 @@ EXIT_CODES process_arguments(int argc, char*** argv)
 
         if (strcmp(**argv, "-c") == 0)
         {
-            if (decompress == true)
+            if (decompressed == true)
             {
-                decompress = false;
+                decompressed = false;
             }
 
-            compress = true;
+            compressed = true;
         }
         else if (strcmp(**argv, "-d") == 0)
         {
-            if (compress == true)
+            if (compressed == true)
             {
-                compress = false;
+                compressed = false;
             }
 
-            decompress = true;
+            decompressed = true;
         }
         else if (strcmp(**argv, "-v") == 0)
         {
@@ -125,7 +130,8 @@ EXIT_CODES process_arguments(int argc, char*** argv)
             else if (***argv != '-' && i == argc - 1)
             {
                 is_input_filename = true;
-                input_filename = **argv;
+                strncpy(input_filename, **argv, strlen(**argv));
+//                input_filename = **argv;
             }
             else
             {
@@ -135,7 +141,7 @@ EXIT_CODES process_arguments(int argc, char*** argv)
         }
     }
 
-    if (decompress == true)
+    if (decompressed == true)
     {
         level = false;
         level_number = 0;
@@ -144,7 +150,7 @@ EXIT_CODES process_arguments(int argc, char*** argv)
     {
         strncpy(output_filename, input_filename, strlen(input_filename));
 
-        if (decompress && is_input_filename)
+        if (decompressed && is_input_filename)
         {
             strcat(output_filename, ".hd\0");
 
@@ -155,7 +161,7 @@ EXIT_CODES process_arguments(int argc, char*** argv)
         }
     }
 
-    if ((exit_code == SUCCESS_RUN && (decompress || compress) && is_input_filename))
+    if ((exit_code == SUCCESS_RUN && (decompressed || compressed) && is_input_filename))
     {
         exit_code = SUCCESS_RUN;
     }
@@ -165,22 +171,32 @@ EXIT_CODES process_arguments(int argc, char*** argv)
     }
 
     printf("--------------------------------\n");
-    printf("Compress: %d\n", compress);
-    printf("Decompress: %d\n", decompress);
+    printf("Compress: %d\n", compressed);
+    printf("Decompress: %d\n", decompressed);
     printf("Level: %d   Level-Nr: %d\n", level, level_number);
     printf("Info: %d\n", info);
     printf("Help: %d\n", help);
     printf("Output: %d   %s\n", output_comand, (char *) output_filename);
-    printf("Filename: %d   %s\n", is_input_filename, input_filename);
+    printf("Filename: %d   %s\n", is_input_filename, (char *) input_filename);
     printf("--------------------------------\n");
 
     return exit_code;
 }
 
-void reset_values() 
+extern void showInfo()
 {
-    compress = false;
-    decompress = false;
+    
+}
+
+extern void showHelp()
+{
+    
+}
+
+static void reset_values() 
+{
+    compressed = false;
+    decompressed = false;
     info = false;
     help = false;
 

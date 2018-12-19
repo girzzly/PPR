@@ -9,6 +9,8 @@
  * @date 2018-11-06
  */
 
+#include <stdlib.h>
+#include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
 
@@ -34,6 +36,11 @@
  */
 #define BYTE_SIZE 8
 
+/** Eingabestrom. */
+static FILE *input_file_stream = NULL;
+
+/** Ausgabestrom. */
+static FILE *output_file_stream = NULL;
 
 /** Index für den in_puffer. */
 static int index_byte;
@@ -54,7 +61,6 @@ static unsigned char in_puffer[BUF_SIZE];
 
 /** Bitspeicher. */
 static unsigned char out_puffer[BUF_SIZE];
-
 
 extern bool has_next_char(void)
 {
@@ -79,45 +85,119 @@ extern bool has_next_bit(void)
 }
 
 extern BIT read_bit(void)
-{   
+{
     return GET_BIT(in_puffer[index_bit], position_bit);
 }
 
 extern void write_bit(BIT c)
-{    
+{
     out_puffer[index_bit] = PUT_BIT(out_puffer[index_bit], c, position_bit);
-    
+
     position_bit++;
-    
-    if(position_bit >= BYTE_SIZE)
+
+    if (position_bit >= BYTE_SIZE)
     {
         position_bit = 0;
         index_bit++;
     }
-    
+
     fill_level_out_puffer = index_bit;
 }
 
-static void reset(void)
+extern void reset(void)
 {
     index_byte = 0;
-    
+
     index_bit = 0;
     position_bit = 0;
 
     fill_level_out_puffer = 0;
-    fill_level_in_puffer = 0;
+    fill_level_in_puffer = strlen((char*) in_puffer);
 }
 
-extern void put_puffer_in(unsigned char in[])
+extern EXIT_CODES open_infile(char *in_filename)
 {
-    reset();
+    EXIT_CODES exit_code = SUCCESS_RUN;
+
+    input_file_stream = fopen(in_filename, "rb");
+
+    if (input_file_stream == NULL)
+    {
+        exit_code = IO_ERROR;
+        printf("IO ERROR: Fehler beim öffnen der Eingabedatei.");
+        exit(exit_code);
+    }
+    else
+    {
+        memset(out_puffer, '\0', BUF_SIZE);
+        printf("Eingabedatei \'%s\' wurde geoeffnet.\n", in_filename);
+        
+        // read file
+        fread(in_puffer, sizeof(char), BUF_SIZE, input_file_stream);
+        printf("Eingabe-Text: %s\n", in_puffer);
+    }
+
+    return exit_code;
+}
+
+extern EXIT_CODES open_outfile(char *out_filename)
+{
+    EXIT_CODES exit_code = SUCCESS_RUN;
+
+    output_file_stream = fopen(out_filename, "wb");
+
+    if (output_file_stream == NULL)
+    {
+        exit_code = IO_ERROR;
+        printf("IO ERROR: Fehler beim öffnen der Ausgabedatei.");
+        exit(exit_code);
+    }
+    else
+    {
+        memset(in_puffer, '\0', BUF_SIZE);
+        printf("Ausgabedatei \'%s\' wurde geoeffnet.\n", out_filename);
+    }
     
-    fill_level_in_puffer = strlen((char*) in);
-    strncpy((char*) in_puffer, (char*) in, fill_level_in_puffer);
+    return exit_code;
 }
 
-extern void put_puffer_out(unsigned char out[])
+extern EXIT_CODES close_infile()
 {
-    strncpy((char*) out, (char*) out_puffer, fill_level_out_puffer);
+    EXIT_CODES exit_code = SUCCESS_RUN;
+    
+    if(fclose(input_file_stream) == EOF)
+    {
+        exit_code = IO_ERROR;
+        printf("IO ERROR: Fehler beim schliessen der Eingabedatei.");
+        exit(exit_code);
+    }
+    else
+    {
+        printf("Eingabedatei \'%s\' wurde geschlossen.\n", input_filename);
+    }
+
+    return exit_code;
+}
+
+extern EXIT_CODES close_outfile()
+{
+    EXIT_CODES exit_code = SUCCESS_RUN;
+fwrite(out_puffer, sizeof(char), BUF_SIZE, output_file_stream);
+    if(fclose(output_file_stream) == EOF)
+    {
+        exit_code = IO_ERROR;
+        printf("IO ERROR: Fehler beim schliessen der Ausgabedatei.");
+        exit(exit_code);
+    }
+    else
+    {
+        printf("Ausagbedatei \'%s\' wurde geschlossen.\n", output_filename);
+        
+        // Inhalt des Ausgabepuffers vorher noch einmal in die Ausgabedatei geschrieben.
+        // out_puffer in Ausgabedatei schreiben! - fwirte
+        fwrite(out_puffer, sizeof(char), BUF_SIZE, output_file_stream);
+        printf("Ausgabedatei-Text: %s\t%d\n", out_puffer, output_file_stream);
+    }
+    
+    return exit_code;
 }

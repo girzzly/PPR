@@ -23,7 +23,7 @@
 #define MAX_FILENAME_LENGTH 256
 
 /** Name der Input-Datei. */
-extern char *input_filename;
+extern char input_filename[MAX_FILENAME_LENGTH];
 
 /** Name der Output-Datei. */
 extern char output_filename[MAX_FILENAME_LENGTH];
@@ -67,6 +67,45 @@ extern BIT read_bit(void);
  * @param c Das zu schreibende Bit.
  */
 extern void write_bit(BIT c);
+
+extern void reset();
+
+/**
+ * Diese Funktion öffnet die Eingabedatei und initisiert
+ * den Ausgabepuffer als leer.
+ * @param in_filename Name der Eingabedatei.
+ * @param in_stream Filestream der Eingabedatei.
+ * @return Liefer einen Exit Code zurück SUCCESS_RUN, wenn öffen erflogreich
+ *         war und IO_ERROR, falls das Öffnen Fehlerhaft war.
+ */
+extern EXIT_CODES open_infile(char *in_filename);
+
+/**
+ * Diese Funktion öffnet die Ausgabedatei und initisiert
+ * den Eingabepuffer als leer.
+ * @param out_filename Name der Ausgabedatei.
+ * @param out_stream Filestream der Ausgabedatei.
+ * @return Liefer einen Exit Code zurück SUCCESS_RUN, wenn öffen erflogreich
+ *         war und IO_ERROR, falls das Öffnen Fehlerhaft war.
+ */
+extern EXIT_CODES open_outfile(char *out_filename);
+
+/**
+ * Diese Funktion schließt die Eingabedatei.
+ * @return Liefer einen Exit Code zurück SUCCESS_RUN, wenn schließen erflogreich
+ *         war und IO_ERROR, falls das Schließen Fehlerhaft war.
+ */
+extern EXIT_CODES close_infile();
+
+/**
+ * Diese Funktion schließt die Ausgabedatei. Beim Schließen der Ausgabedatei
+ * muss der Inhalt des Ausgabepuffers vorher noch einmal in die Ausgabedatei
+ * geschrieben werden.
+ * @return Liefer einen Exit Code zurück SUCCESS_RUN, wenn schließen erflogreich
+ *         war und IO_ERROR, falls das Schließen Fehlerhaft war.
+ */
+extern EXIT_CODES close_outfile();
+
 
 #endif
 

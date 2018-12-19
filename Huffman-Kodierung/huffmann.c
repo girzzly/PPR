@@ -15,11 +15,14 @@
 #include "huffmann.h"
 #include "io.h"
 
-extern void copy_chars(char in[], char out[])
-{   
-    unsigned char c;
+extern void compress(char in_filename[], char out_filename[])
+{
+    open_infile((char *) in_filename);
+    close_infile();
     
-    put_puffer_in(in);
+    reset();
+
+    unsigned char c;
 
     while (has_next_char())
     {
@@ -27,14 +30,18 @@ extern void copy_chars(char in[], char out[])
         write_char(c);
     }
 
-    put_puffer_out(out);
+    open_outfile((char *) out_filename);
+    close_outfile();
 }
 
-extern void copy_bits(char in[], char out[])
+extern void decompress(char in_filename[], char out_filename[])
 {    
-    BIT c;
+    open_infile((char *) in_filename);
+    close_infile(); 
     
-    put_puffer_in(in);
+    reset();
+
+    BIT c;
 
     while (has_next_bit())
     {
@@ -42,6 +49,7 @@ extern void copy_bits(char in[], char out[])
         write_bit(c);
     }
 
-    put_puffer_out(out);
+    open_outfile((char *) out_filename);
+    close_outfile();
 }
 
