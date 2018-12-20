@@ -19,13 +19,25 @@
 #include "huffmann.h"
 #include "io.h"
 
+/** Programmstartzeitpunkt. */
 clock_t prg_start;
+
+/** Programmendzeitpunkt. */
 clock_t prg_end;
 
+/** Zeigt an ob Filename vorhanden. */
 bool is_input_filename;
+
+/** Zeigt an ob Komprimiert werden soll. */
 bool compresed;
+
+/** Zeigt an ob Dekomprimiert werden soll. */
 bool decompresed;
+
+/** Zeigt an ob Fileinformationen und Programmlaufzeit angezeigt werden soll. */
 bool info;
+
+/** Zeigt an ob die Programmhilfe angezeigt werden soll. */
 bool help;
 
 /**

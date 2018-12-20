@@ -21,7 +21,6 @@
 #endif
 #include <time.h>
 
-#include "argument_validation.h"
 #include "huffmann_common.h"
 #include "io.h"
 
