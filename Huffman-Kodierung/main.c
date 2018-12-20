@@ -58,10 +58,10 @@ int main(int argc, char** argv)
     /* Zeigt an, ob es sich um einen Input Filename handelt. */
     bool is_input_filename;
 
-    /** Name der Inputdatei. */
+    /* Name der Inputdatei. */
     char *input_filename = "";
 
-    /** Name der Outputdatei. */
+    /* Name der Outputdatei. */
     char *output_filename = "";
     
     prg_start = clock();
@@ -78,23 +78,21 @@ int main(int argc, char** argv)
     
     
     
-    char ifn[MAX_FILENAME_LENGTH] = {'\0'};
-    char ofn[MAX_FILENAME_LENGTH] = {'\0'};
-    strncpy(ifn, input_filename, strlen(input_filename));
-    strncpy(ofn, output_filename, strlen(output_filename));
-    
-    printf("files: %s %s", ofn, ifn);
+    char in_filename[MAX_FILENAME_LENGTH] = {'\0'};
+    char out_filename[MAX_FILENAME_LENGTH] = {'\0'};
+    strncpy(in_filename, input_filename, strlen(input_filename));
+    strncpy(out_filename, output_filename, strlen(output_filename));
 
     if (exit_code == SUCCESS_RUN)
     {
 
         if (compressed && !help)
         {
-            compress(ifn, ofn);
+            compress(input_filename, output_filename);
         }
         else if (!compressed && !help)
         {
-            decompress(ifn, ofn);
+            decompress(input_filename, output_filename);
         }
 
     }
@@ -103,7 +101,7 @@ int main(int argc, char** argv)
 
     if (info && (compressed || decompressed) && is_input_filename)
     {
-        showInfo(input_filename, output_filename, prg_start, prg_end);
+        showInfo(in_filename, out_filename, prg_start, prg_end);
     }
 
     printf("Program terminated with exit code %d.\n", exit_code);

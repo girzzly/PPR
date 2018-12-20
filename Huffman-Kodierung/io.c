@@ -124,14 +124,15 @@ static void reset(void)
     position_bit = 0;
 
     fill_level_out_puffer = 0;
-    fill_level_in_puffer = strlen((char*) in_puffer);
 }
 
 extern size_t read_file()
 {
-    memset(in_puffer, '\0', BUF_SIZE);
-    size_t r = fread(in_puffer, sizeof (char), BUF_SIZE, input_file_stream);
+//    memset(in_puffer, '\0', BUF_SIZE);
     reset();
+    size_t r = fread(in_puffer, sizeof (char), BUF_SIZE, input_file_stream);
+    fill_level_in_puffer = strlen((char*) in_puffer);
+    
 
     return r;
 }
@@ -158,7 +159,8 @@ extern EXIT_CODES open_infile(char *in_filename)
     }
     else
     {
-        memset(out_puffer, '\0', BUF_SIZE);
+        reset();
+//        memset(out_puffer, '\0', BUF_SIZE);
     }
 
     return exit_code;

@@ -34,7 +34,7 @@
  * @return Liefer einen Error Code zurück. SUCCESS_RUN wenn kein Fehler vorliegt,
  *         ansonsten ARGUMENTS_ERROR.
  */
-EXIT_CODES process_arguments(int argc, char*** argv,
+extern EXIT_CODES process_arguments(int argc, char*** argv,
                              bool *compressed, bool *decompressed,
                              bool *info, bool *help,
                              bool *level, int *level_number,

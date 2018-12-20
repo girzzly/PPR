@@ -24,20 +24,20 @@ EXIT_CODES process_arguments(int argc, char*** argv,
                              bool *output_comand, bool *is_input_filename,
                              char **output_filename, char **input_filename)
 {
-    
+
     EXIT_CODES exit_code = SUCCESS_RUN;
-    
+
     *compressed = false;
     *decompressed = false;
-    
+
     *info = false;
     *help = false;
-    
+
     *level = true;
     *level_number = 2;
-    
+
     *output_comand = false;
-    
+
     *is_input_filename = false;
 
     int i;
@@ -144,45 +144,47 @@ EXIT_CODES process_arguments(int argc, char*** argv,
     }
     if (*output_comand == false)
     {
-        char name[MAX_FILENAME_LENGTH] = {'\0'};
+        char name[MAX_FILENAME_LENGTH];
         strncpy(name, *input_filename, strlen(*input_filename));
         *output_filename = name;
 
         if (*decompressed && *is_input_filename)
         {
-            strncat(*output_filename, ".hd\0", strlen(*output_filename));
+            strncat(*output_filename, ".hd", strlen(*output_filename));
 
         }
         else
         {
-            strncat(*output_filename, ".hc\0", strlen(*output_filename));
+            strncat(*output_filename, ".hc", strlen(*output_filename));
         }
     }
 
     if (*help || (exit_code == SUCCESS_RUN && (*decompressed || *compressed) && *is_input_filename))
     {
-        if (*help)
-        {
-            showHelp();
-        }
-
         exit_code = SUCCESS_RUN;
     }
     else
     {
         exit_code = ARGUMENTS_ERROR;
     }
+    
+    if (*help)
+    {
+        showHelp();
+    }
+
+    
 
     // Debugg Hilfe
-        printf("--------------------------------\n");
-        printf("Compress: %d\n", *compressed);
-        printf("Decompress: %d\n", *decompressed);
-        printf("Level: %d   Level-Nr: %d\n", *level, *level_number);
-        printf("Info: %d\n", *info);
-        printf("Help: %d\n", *help);
-        printf("Output: %d   %s\n", *output_comand, *output_filename);
-        printf("Filename: %d   %s\n", *is_input_filename, *input_filename);
-        printf("--------------------------------\n");
+    printf("--------------------------------\n");
+    printf("Compress: %d\n", *compressed);
+    printf("Decompress: %d\n", *decompressed);
+    printf("Level: %d   Level-Nr: %d\n", *level, *level_number);
+    printf("Info: %d\n", *info);
+    printf("Help: %d\n", *help);
+    printf("Output: %d   %s\n", *output_comand, *output_filename);
+    printf("Filename: %d   %s\n", *is_input_filename, *input_filename);
+    printf("--------------------------------\n");
 
     return exit_code;
 }
