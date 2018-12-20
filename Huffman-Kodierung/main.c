@@ -19,7 +19,14 @@
 #include "huffmann.h"
 #include "io.h"
 
+clock_t prg_start;
+clock_t prg_end;
+
+bool is_input_filename;
 bool compresed;
+bool decompresed;
+bool info;
+bool help;
 
 /**
  * Hier werden alle Funktionen aufgerufen.
@@ -28,44 +35,31 @@ bool compresed;
  */
 int main(int argc, char** argv)
 {
+    prg_start = clock();
+    
     EXIT_CODES exit_code = process_arguments(argc, &argv);
 
     if (exit_code == SUCCESS_RUN)
     {
         
-        if(compresed) {
-            printf("compress? %d\n", compressed);
+        if(compresed && !help) {
             compress(input_filename, output_filename);
         }
-        else {
-            printf("compress? %d\n", compressed);
+        else if(!compresed && !help) {
             decompress(input_filename, output_filename);
         }
-        
-//        open_infile(input_filename);
-//        open_outfile((char *)output_filename);
-        
-//        char in[] = "abcdefghijklmnopqrstuvwxyz";
-//        char out[BUF_SIZE] = {0};
-//        copy_chars(in, out);
-        //    copy_bits(in, out);
-//        PRINT_PUFFER(out, strlen((char*) out));
-
-//        {
-//            char in2[] = "0123456789";
-//            char out2[BUF_SIZE] = {0};
-//            copy_chars(in2, out2);
-            //        copy_bits(in2, out2);
-//            PRINT_PUFFER(out2, strlen((char*) out2));
-//        }
+       
     }
-//    else
-//    {
-//        printf("Program terminated with exit code %d.\n", exit_code);
-//    }
+
+    prg_end = clock();
+    
+    if(info && (compresed || decompresed) && is_input_filename)
+    {
+        showInfo(input_filename, output_filename, prg_start, prg_end);
+    }
     
     printf("Program terminated with exit code %d.\n", exit_code);
-
+    
     return (exit_code);
 }
 

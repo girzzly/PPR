@@ -68,7 +68,19 @@ extern BIT read_bit(void);
  */
 extern void write_bit(BIT c);
 
-extern void reset();
+/**
+ * Liest aus einer Datei die maximale Blockgröße 
+ * und schreibt den Inhalt in den in_puffer.
+ * @return Gelesene Anzahl der Zeichen.
+ */
+extern size_t read_file();
+
+/**
+ * Schreibt den Inhalt des out_puffers in eine Datei 
+ * bis verbleibende Blockgröße erreicht ist.
+ * @return Geschriebene Anzahl der Zeichen.
+ */
+extern size_t write_file();
 
 /**
  * Diese Funktion öffnet die Eingabedatei und initisiert
@@ -105,6 +117,16 @@ extern EXIT_CODES close_infile();
  *         war und IO_ERROR, falls das Schließen Fehlerhaft war.
  */
 extern EXIT_CODES close_outfile();
+
+/**
+ * Zeigt Informationen über die Größe der Ein- und Ausgabedatei an
+ * und die Programmlaufzeit in Sekunden.
+ * @param in_filename Die Eingabedatei.
+ * @param out_filename Die Ausgabedatei.
+ * @param prg_start Der Startzeitpunkt des Programms.
+ * @param prg_end Der Endzeitpunkt des Programms.
+ */
+extern void showInfo(char *in_filename, char *out_filename, clock_t prg_start, clock_t prg_end);
 
 
 #endif

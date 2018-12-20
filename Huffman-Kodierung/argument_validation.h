@@ -11,6 +11,8 @@
 
 #include <stdbool.h>
 
+#include "huffmann_common.h"
+
 #ifndef _ARGUMENT_VALIDATION_H
 #define _ARGUMENT_VALIDATION_H
 
@@ -52,12 +54,6 @@ extern EXIT_CODES process_arguments(int argc, char*** argv);
  * Gibt Informationen über die Programmbenutzung am Bildschirm aus.
  */
 extern void showHelp();
-
-/**
- * Gibt Informationen über die Dateien aus.
- * Größe der Eingabedatei, Größe der Ausgabedatei, Programmlaufzeit in Sekunden.
- */
-extern void showInfo();
 
 #endif
 
