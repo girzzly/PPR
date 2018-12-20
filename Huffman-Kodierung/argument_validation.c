@@ -37,6 +37,7 @@ bool is_input_filename = false;
  */
 static void reset_values();
 
+
 EXIT_CODES process_arguments(int argc, char*** argv)
 {
     EXIT_CODES exit_code = SUCCESS_RUN;
@@ -191,7 +192,7 @@ EXIT_CODES process_arguments(int argc, char*** argv)
 
 extern void showHelp()
 {
-    printf("\nUsage: huffmann_kodierung [OPTIONS]... [FILENAME]...\n");
+    printf("Usage: huffmann_kodierung [OPTIONS]... [FILENAME]...\n");
     printf("Komprimiert oder Dekomprimiert Textdatein\nim Sinne der Huffman-Kodierung.\n\n");
 
     printf("Arguments:\n");
