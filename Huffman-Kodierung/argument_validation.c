@@ -17,20 +17,36 @@
 #include "argument_validation.h"
 #include "io.h"
 
-char output_filename[MAX_FILENAME_LENGTH] = {'\0'};
-char input_filename[MAX_FILENAME_LENGTH] = {'\0'};
-
+/** Zeigt an, ob komprimiert werden soll. */
 bool compressed = false;
+
+/** Zeigt an, ob dekomprimiert werden soll. */
 bool decompressed = false;
+
+/** Zeigt an, ob Infos ausgegeben werden sollen. */
 bool info = false;
+
+/** Zeigt an, ob die Programmhilfe ausgegeben werden soll. */
 bool help = false;
 
+/** Zeigt an, ob ein Level für die Komprimierung gesetzt werden soll. */
 bool level = true;
+
+/** Levelnummer der Komprimierung. */
 int level_number = 2;
 
+/** Zeigt an, ob es ein -o Kommando gibt. */
 bool output_comand = false;
 
+/** Zeigt an, ob es sich um einen Input Filename handelt. */
 bool is_input_filename = false;
+
+/** Name der Inputdatei. */
+static char input_filename[MAX_FILENAME_LENGTH] = {'\0'};
+
+/** Name der Outputdatei. */
+static char output_filename[MAX_FILENAME_LENGTH] = {'\0'};
+
 
 /**
  * Setzt die Variablenwerte zurück.
@@ -237,4 +253,16 @@ static void reset_values()
 
     output_comand = false;
     is_input_filename = false;
+}
+
+extern char* get_input_filename()
+{
+    char *p = input_filename;
+    return p;
+}
+
+extern char* get_output_filename()
+{
+    char *p = output_filename;
+    return p;
 }

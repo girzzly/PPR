@@ -31,20 +31,5 @@ extern void compress(char in_filename[], char out_filename[]);
  */
 extern void decompress(char in_filename[], char out_filename[]);
 
-/**
- * Kopiert den Eingabepuffer byteweise in den Ausgabepuffer.
- * @param in Das zu kopierende Array.
- * @param out Das fertig kopierte Array.
- */
-//extern void copy_chars(char in[], char out[]);
-
-/**
- * Kopiert den EIngabepuffer bitweise in den Ausgabepuffer.
- * @param in Das zu kopierende Array.
- * @param out Das fertig kopierte Array.
- */
-//extern void copy_bits(char in[], char out[]);
-
-
 #endif /* HUFFMANN_H */
 

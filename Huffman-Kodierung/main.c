@@ -56,11 +56,11 @@ int main(int argc, char** argv)
 
         if (compressed && !help)
         {
-            compress(input_filename, output_filename);
+            compress(get_input_filename(), get_output_filename());
         }
         else if (!compressed && !help)
         {
-            decompress(input_filename, output_filename);
+            decompress(get_input_filename(), get_output_filename());
         }
 
     }
@@ -69,10 +69,10 @@ int main(int argc, char** argv)
 
     if (info && (compressed || decompresed) && is_input_filename)
     {
-        showInfo(input_filename, output_filename, prg_start, prg_end);
+        showInfo(get_input_filename(), get_output_filename(), prg_start, prg_end);
     }
 
-//    printf("Program terminated with exit code %d.\n", exit_code);
+    printf("Program terminated with exit code %d.\n", exit_code);
 
     return (exit_code);
 }

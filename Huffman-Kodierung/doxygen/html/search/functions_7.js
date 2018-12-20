@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['showhelp',['showHelp',['../a00002.html#aec315d77f5c38417289a0e311d2a9d31',1,'showHelp():&#160;argument_validation.c'],['../a00005.html#aec315d77f5c38417289a0e311d2a9d31',1,'showHelp():&#160;argument_validation.c']]],
-  ['showinfo',['showInfo',['../a00017.html#a8e00040388574d82f77a6a32b231ed19',1,'showInfo(char *in_filename, char *out_filename, clock_t prg_start, clock_t prg_end):&#160;io.c'],['../a00020.html#a8e00040388574d82f77a6a32b231ed19',1,'showInfo(char *in_filename, char *out_filename, clock_t prg_start, clock_t prg_end):&#160;io.c']]]
+  ['read_5fbit',['read_bit',['../a00017.html#af327fb024bf283d68b012947f90b695f',1,'read_bit(void):&#160;io.c'],['../a00020.html#af327fb024bf283d68b012947f90b695f',1,'read_bit(void):&#160;io.c']]],
+  ['read_5fchar',['read_char',['../a00017.html#a882aef20c6681d7b896a7531407d96fa',1,'read_char(void):&#160;io.c'],['../a00020.html#a882aef20c6681d7b896a7531407d96fa',1,'read_char(void):&#160;io.c']]],
+  ['read_5ffile',['read_file',['../a00017.html#ac20547b14e483fa80566831888aa496b',1,'read_file():&#160;io.c'],['../a00020.html#ac20547b14e483fa80566831888aa496b',1,'read_file():&#160;io.c']]],
+  ['reset',['reset',['../a00017.html#aebbba89eb574f823428be75d0ffc10c9',1,'io.c']]],
+  ['reset_5fvalues',['reset_values',['../a00002.html#ac3d738f0f7fc6ce3e4cc5f686d5de7f0',1,'argument_validation.c']]]
 ];

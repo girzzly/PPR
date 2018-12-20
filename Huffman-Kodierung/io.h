@@ -22,12 +22,6 @@
 /** Maximale Dateinamenlänge. */
 #define MAX_FILENAME_LENGTH 256
 
-/** Name der Input-Datei. */
-extern char input_filename[MAX_FILENAME_LENGTH];
-
-/** Name der Output-Datei. */
-extern char output_filename[MAX_FILENAME_LENGTH];
-
 /**
  * Gibt an ob noch weitere Bytes aus dem Eingabepuffer gelesen werden können.
  * @return true falls nächstes Byte vorhanden,

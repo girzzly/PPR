@@ -55,5 +55,17 @@ extern EXIT_CODES process_arguments(int argc, char*** argv);
  */
 extern void showHelp();
 
+/**
+ * Dise Funktion gibt den Inputfilenamen zurück.
+ * @return Liefert einen Char-Pointer auf den Inputfilenamen zurück.
+ */
+extern char* get_input_filename();
+
+/**
+ * Dise Funktion gibt den Outputfilenamen zurück.
+ * @return Liefert einen Char-Pointer auf den Outputfilenamen zurück.
+ */
+extern char* get_output_filename();
+
 #endif
 

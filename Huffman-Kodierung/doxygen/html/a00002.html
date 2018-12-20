@@ -81,13 +81,13 @@ Funktionen</h2></td></tr>
 <tr class="separator:a4e04f8070414a11c3d7126731f3b7d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec315d77f5c38417289a0e311d2a9d31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#aec315d77f5c38417289a0e311d2a9d31">showHelp</a> ()</td></tr>
 <tr class="separator:aec315d77f5c38417289a0e311d2a9d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c0077321ca35a259598c4c410cdc58c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a3c0077321ca35a259598c4c410cdc58c">get_input_filename</a> ()</td></tr>
+<tr class="separator:a3c0077321ca35a259598c4c410cdc58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab97e5680f792b9113e82b19fcea49da3"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#ab97e5680f792b9113e82b19fcea49da3">get_output_filename</a> ()</td></tr>
+<tr class="separator:ab97e5680f792b9113e82b19fcea49da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variablen</h2></td></tr>
-<tr class="memitem:a14cab49446682c06b736c22b95bd2745"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a14cab49446682c06b736c22b95bd2745">output_filename</a> [<a class="el" href="a00020.html#a6773b93f3093658c3dcb569de3b4bdb2">MAX_FILENAME_LENGTH</a>] = {'\0'}</td></tr>
-<tr class="separator:a14cab49446682c06b736c22b95bd2745"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa88d763e9be7f135cb1810d0a8733977"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#aa88d763e9be7f135cb1810d0a8733977">input_filename</a> [<a class="el" href="a00020.html#a6773b93f3093658c3dcb569de3b4bdb2">MAX_FILENAME_LENGTH</a>] = {'\0'}</td></tr>
-<tr class="separator:aa88d763e9be7f135cb1810d0a8733977"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8834d4dae74854bd816d9549200cf9a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a8834d4dae74854bd816d9549200cf9a4">compressed</a> = false</td></tr>
 <tr class="separator:a8834d4dae74854bd816d9549200cf9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3202b9e00be3a2713775eec166be58a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#af3202b9e00be3a2713775eec166be58a">decompressed</a> = false</td></tr>
@@ -104,12 +104,68 @@ Variablen</h2></td></tr>
 <tr class="separator:aa4a779509a406004de8dbf10c9bf757f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d37785d90a6690d96812c1e61ba98f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a2d37785d90a6690d96812c1e61ba98f1">is_input_filename</a> = false</td></tr>
 <tr class="separator:a2d37785d90a6690d96812c1e61ba98f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa88d763e9be7f135cb1810d0a8733977"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#aa88d763e9be7f135cb1810d0a8733977">input_filename</a> [<a class="el" href="a00020.html#a6773b93f3093658c3dcb569de3b4bdb2">MAX_FILENAME_LENGTH</a>] = {'\0'}</td></tr>
+<tr class="separator:aa88d763e9be7f135cb1810d0a8733977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14cab49446682c06b736c22b95bd2745"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a14cab49446682c06b736c22b95bd2745">output_filename</a> [<a class="el" href="a00020.html#a6773b93f3093658c3dcb569de3b4bdb2">MAX_FILENAME_LENGTH</a>] = {'\0'}</td></tr>
+<tr class="separator:a14cab49446682c06b736c22b95bd2745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">AusfÃ¼hrliche Beschreibung</h2>
 <div class="textblock"><p>In diesem Modul werden die Argumente, die per Komandozeile übergeben werden überprüft.</p>
 <dl class="section author"><dt>Autor</dt><dd>Dominik Krakau</dd></dl>
 <dl class="section date"><dt>Datum</dt><dd>2018-12-19 </dd></dl>
 </div><h2 class="groupheader">Dokumentation der Funktionen</h2>
+<a id="a3c0077321ca35a259598c4c410cdc58c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c0077321ca35a259598c4c410cdc58c">&#9670;&nbsp;</a></span>get_input_filename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* get_input_filename </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dise Funktion gibt den Inputfilenamen zurück. </p><dl class="section return"><dt>RÃ¼ckgabe</dt><dd>Liefert einen Char-Pointer auf den Inputfilenamen zurück. </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00002_a3c0077321ca35a259598c4c410cdc58c_icgraph.png" border="0" usemap="#a00002_a3c0077321ca35a259598c4c410cdc58c_icgraph" alt=""/></div>
+<map name="a00002_a3c0077321ca35a259598c4c410cdc58c_icgraph" id="a00002_a3c0077321ca35a259598c4c410cdc58c_icgraph">
+<area shape="rect" id="node2" href="a00023.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="184,5,235,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab97e5680f792b9113e82b19fcea49da3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab97e5680f792b9113e82b19fcea49da3">&#9670;&nbsp;</a></span>get_output_filename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* get_output_filename </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dise Funktion gibt den Outputfilenamen zurück. </p><dl class="section return"><dt>RÃ¼ckgabe</dt><dd>Liefert einen Char-Pointer auf den Outputfilenamen zurück. </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00002_ab97e5680f792b9113e82b19fcea49da3_icgraph.png" border="0" usemap="#a00002_ab97e5680f792b9113e82b19fcea49da3_icgraph" alt=""/></div>
+<map name="a00002_ab97e5680f792b9113e82b19fcea49da3_icgraph" id="a00002_ab97e5680f792b9113e82b19fcea49da3_icgraph">
+<area shape="rect" id="node2" href="a00023.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="192,5,243,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a4e04f8070414a11c3d7126731f3b7d5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e04f8070414a11c3d7126731f3b7d5e">&#9670;&nbsp;</a></span>process_arguments()</h2>
 
@@ -291,13 +347,21 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">char input_filename[<a class="el" href="a00020.html#a6773b93f3093658c3dcb569de3b4bdb2">MAX_FILENAME_LENGTH</a>] = {'\0'}</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Name der Input-Datei. </p>
+<p>Name der Inputdatei. </p>
 
 </div>
 </div>
@@ -366,20 +430,28 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">char output_filename[<a class="el" href="a00020.html#a6773b93f3093658c3dcb569de3b4bdb2">MAX_FILENAME_LENGTH</a>] = {'\0'}</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Name der Output-Datei. </p>
+<p>Name der Outputdatei. </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Don Dez 20 2018 02:43:37 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Don Dez 20 2018 10:45:41 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>
