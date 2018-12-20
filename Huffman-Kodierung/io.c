@@ -219,8 +219,8 @@ extern void showInfo(char *in_filename, char *out_filename, clock_t prg_start, c
     printf("Ausfuehrungsstatistik\n");
     struct stat attribut;
     stat(in_filename, &attribut);
-    printf(" - Groesse der Eingabedatei %s (byte): %d\n", in_filename, attribut.st_size);
+    printf(" - Groesse der Eingabedatei %s (byte): %ld\n", in_filename, attribut.st_size);
     stat(out_filename, &attribut);
-    printf(" - Groesse der Ausgabedatei %s (byte): %d\n", out_filename, attribut.st_size);
+    printf(" - Groesse der Ausgabedatei %s (byte): %ld\n", out_filename, attribut.st_size);
     printf(" - Die Laufzeit betrug %.2f Sekunden\n\n", (float) (prg_end - prg_start) / CLOCKS_PER_SEC);
 }
