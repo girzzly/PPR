@@ -1,5 +1,4 @@
-<map id="main.c" name="main.c">
-<area shape="rect" id="node5" href="$a00008.html" title="huffmann_common.h" alt="" coords="208,229,351,256"/>
-<area shape="rect" id="node6" href="$a00005.html" title="huffmann.h" alt="" coords="317,80,404,107"/>
-<area shape="rect" id="node7" href="$a00014.html" title="io.h" alt="" coords="365,155,407,181"/>
+<map id="io.c" name="io.c">
+<area shape="rect" id="node8" href="$a00014.html" title="huffmann_common.h" alt="" coords="481,155,624,181"/>
+<area shape="rect" id="node9" href="$a00020.html" title="io.h" alt="" coords="502,80,545,107"/>
 </map>

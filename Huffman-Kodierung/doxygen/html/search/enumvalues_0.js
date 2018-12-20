@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['off',['OFF',['../a00008.html#a42de1d3bbaa4989a0bb0ea5c6923dccbaac132f2982b98bcaa3445e535a03ff75',1,'huffmann_common.h']]],
-  ['on',['ON',['../a00008.html#a42de1d3bbaa4989a0bb0ea5c6923dccba977d478dacaae531f95695750d1e9d03',1,'huffmann_common.h']]]
+  ['arguments_5ferror',['ARGUMENTS_ERROR',['../a00014.html#a050a6400932e5be71a39b90c93cedf9aad86c27c7a84cbcc8ee581fba87609a7f',1,'huffmann_common.h']]]
 ];

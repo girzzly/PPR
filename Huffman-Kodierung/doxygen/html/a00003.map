@@ -1,5 +1,5 @@
-<map id="huffmann.c" name="huffmann.c">
-<area shape="rect" id="node4" href="$a00008.html" title="huffmann_common.h" alt="" coords="121,229,264,256"/>
-<area shape="rect" id="node5" href="$a00005.html" title="huffmann.h" alt="" coords="231,80,317,107"/>
-<area shape="rect" id="node6" href="$a00014.html" title="io.h" alt="" coords="278,155,321,181"/>
+<map id="argument_validation.c" name="argument_validation.c">
+<area shape="rect" id="node5" href="$a00014.html" title="huffmann_common.h" alt="" coords="360,155,503,181"/>
+<area shape="rect" id="node6" href="$a00005.html" title="argument_validation.h" alt="" coords="230,80,379,107"/>
+<area shape="rect" id="node7" href="$a00020.html" title="io.h" alt="" coords="403,80,446,107"/>
 </map>

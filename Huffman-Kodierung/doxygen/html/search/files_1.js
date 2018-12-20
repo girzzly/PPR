@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['io_2ec',['io.c',['../a00011.html',1,'']]],
-  ['io_2eh',['io.h',['../a00014.html',1,'']]]
+  ['huffmann_2ec',['huffmann.c',['../a00008.html',1,'']]],
+  ['huffmann_2eh',['huffmann.h',['../a00011.html',1,'']]],
+  ['huffmann_5fcommon_2eh',['huffmann_common.h',['../a00014.html',1,'']]]
 ];

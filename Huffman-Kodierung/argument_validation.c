@@ -175,15 +175,16 @@ EXIT_CODES process_arguments(int argc, char*** argv)
         exit_code = ARGUMENTS_ERROR;
     }
 
-    printf("--------------------------------\n");
-    printf("Compress: %d\n", compressed);
-    printf("Decompress: %d\n", decompressed);
-    printf("Level: %d   Level-Nr: %d\n", level, level_number);
-    printf("Info: %d\n", info);
-    printf("Help: %d\n", help);
-    printf("Output: %d   %s\n", output_comand, (char *) output_filename);
-    printf("Filename: %d   %s\n", is_input_filename, (char *) input_filename);
-    printf("--------------------------------\n");
+    // Debugg Hilfe
+//    printf("--------------------------------\n");
+//    printf("Compress: %d\n", compressed);
+//    printf("Decompress: %d\n", decompressed);
+//    printf("Level: %d   Level-Nr: %d\n", level, level_number);
+//    printf("Info: %d\n", info);
+//    printf("Help: %d\n", help);
+//    printf("Output: %d   %s\n", output_comand, (char *) output_filename);
+//    printf("Filename: %d   %s\n", is_input_filename, (char *) input_filename);
+//    printf("--------------------------------\n");
 
     return exit_code;
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['position_5fbit',['position_bit',['../a00011.html#a85ee7d30ec90e0518a055d49e73960e8',1,'io.c']]]
+  ['help',['help',['../a00002.html#a545363392790133c5dec1fd9e2cb279d',1,'help():&#160;argument_validation.c'],['../a00005.html#a545363392790133c5dec1fd9e2cb279d',1,'help():&#160;argument_validation.c'],['../a00023.html#a545363392790133c5dec1fd9e2cb279d',1,'help():&#160;main.c']]]
 ];

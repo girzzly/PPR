@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['xprint',['XPRINT',['../a00008.html#a2a5995e3da141ab7d0870f22f2a80413',1,'huffmann_common.h']]],
-  ['xprintln',['XPRINTLN',['../a00008.html#a57a025ededbb9edb89b8c9b3060c06f4',1,'huffmann_common.h']]]
+  ['print_5fpuffer',['PRINT_PUFFER',['../a00014.html#a94de978995aec921fa48784972003579',1,'huffmann_common.h']]],
+  ['put_5fbit',['PUT_BIT',['../a00017.html#a28f5c7e1f10c55811ebdc4b7517a9272',1,'io.c']]]
 ];

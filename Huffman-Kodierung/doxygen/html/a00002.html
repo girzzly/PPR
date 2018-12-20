@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>huffmann.c-Dateireferenz</title>
+<title>argument_validation.c-Dateireferenz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -50,56 +50,83 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Funktionen</a>  </div>
+<a href="#func-members">Funktionen</a> &#124;
+<a href="#var-members">Variablen</a>  </div>
   <div class="headertitle">
-<div class="title">huffmann.c-Dateireferenz</div>  </div>
+<div class="title">argument_validation.c-Dateireferenz</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00008_source.html">huffmann_common.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00005_source.html">huffmann.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00014_source.html">io.h</a>&quot;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00014_source.html">huffmann_common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00005_source.html">argument_validation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00020_source.html">io.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include-AbhÃ¤ngigkeitsdiagramm fÃ¼r huffmann.c:</div>
+Include-AbhÃ¤ngigkeitsdiagramm fÃ¼r argument_validation.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00003.png" border="0" usemap="#huffmann_8c" alt=""/></div>
-<map name="huffmann_8c" id="huffmann_8c">
-<area shape="rect" id="node4" href="a00008.html" title="huffmann_common.h" alt="" coords="121,229,264,256"/>
-<area shape="rect" id="node5" href="a00005.html" title="huffmann.h" alt="" coords="231,80,317,107"/>
-<area shape="rect" id="node6" href="a00014.html" title="io.h" alt="" coords="278,155,321,181"/>
+<div class="center"><img src="a00003.png" border="0" usemap="#argument__validation_8c" alt=""/></div>
+<map name="argument__validation_8c" id="argument__validation_8c">
+<area shape="rect" id="node5" href="a00014.html" title="huffmann_common.h" alt="" coords="360,155,503,181"/>
+<area shape="rect" id="node6" href="a00005.html" title="argument_validation.h" alt="" coords="230,80,379,107"/>
+<area shape="rect" id="node7" href="a00020.html" title="io.h" alt="" coords="403,80,446,107"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funktionen</h2></td></tr>
-<tr class="memitem:a3e0f74a05ecef18ee19d91ab3a87d5a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a3e0f74a05ecef18ee19d91ab3a87d5a3">copy_chars</a> (char in[], char out[])</td></tr>
-<tr class="separator:a3e0f74a05ecef18ee19d91ab3a87d5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0edda638e496e3309858596598ea3af8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a0edda638e496e3309858596598ea3af8">copy_bits</a> (char in[], char out[])</td></tr>
-<tr class="separator:a0edda638e496e3309858596598ea3af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d738f0f7fc6ce3e4cc5f686d5de7f0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#ac3d738f0f7fc6ce3e4cc5f686d5de7f0">reset_values</a> ()</td></tr>
+<tr class="separator:ac3d738f0f7fc6ce3e4cc5f686d5de7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e04f8070414a11c3d7126731f3b7d5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00014.html#a050a6400932e5be71a39b90c93cedf9a">EXIT_CODES</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a4e04f8070414a11c3d7126731f3b7d5e">process_arguments</a> (int argc, char ***argv)</td></tr>
+<tr class="separator:a4e04f8070414a11c3d7126731f3b7d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec315d77f5c38417289a0e311d2a9d31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#aec315d77f5c38417289a0e311d2a9d31">showHelp</a> ()</td></tr>
+<tr class="separator:aec315d77f5c38417289a0e311d2a9d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variablen</h2></td></tr>
+<tr class="memitem:a14cab49446682c06b736c22b95bd2745"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a14cab49446682c06b736c22b95bd2745">output_filename</a> [<a class="el" href="a00020.html#a6773b93f3093658c3dcb569de3b4bdb2">MAX_FILENAME_LENGTH</a>] = {'\0'}</td></tr>
+<tr class="separator:a14cab49446682c06b736c22b95bd2745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa88d763e9be7f135cb1810d0a8733977"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#aa88d763e9be7f135cb1810d0a8733977">input_filename</a> [<a class="el" href="a00020.html#a6773b93f3093658c3dcb569de3b4bdb2">MAX_FILENAME_LENGTH</a>] = {'\0'}</td></tr>
+<tr class="separator:aa88d763e9be7f135cb1810d0a8733977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8834d4dae74854bd816d9549200cf9a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a8834d4dae74854bd816d9549200cf9a4">compressed</a> = false</td></tr>
+<tr class="separator:a8834d4dae74854bd816d9549200cf9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3202b9e00be3a2713775eec166be58a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#af3202b9e00be3a2713775eec166be58a">decompressed</a> = false</td></tr>
+<tr class="separator:af3202b9e00be3a2713775eec166be58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3a88b183c8c84c0eafd43f2f40c7690"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#ab3a88b183c8c84c0eafd43f2f40c7690">info</a> = false</td></tr>
+<tr class="separator:ab3a88b183c8c84c0eafd43f2f40c7690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545363392790133c5dec1fd9e2cb279d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a545363392790133c5dec1fd9e2cb279d">help</a> = false</td></tr>
+<tr class="separator:a545363392790133c5dec1fd9e2cb279d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e9667ea97bdf511cc167b924ec833c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a99e9667ea97bdf511cc167b924ec833c">level</a> = true</td></tr>
+<tr class="separator:a99e9667ea97bdf511cc167b924ec833c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a564abc27b126ef392d7b1d74b3a0461f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a564abc27b126ef392d7b1d74b3a0461f">level_number</a> = 2</td></tr>
+<tr class="separator:a564abc27b126ef392d7b1d74b3a0461f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a779509a406004de8dbf10c9bf757f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#aa4a779509a406004de8dbf10c9bf757f">output_comand</a> = false</td></tr>
+<tr class="separator:aa4a779509a406004de8dbf10c9bf757f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d37785d90a6690d96812c1e61ba98f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html#a2d37785d90a6690d96812c1e61ba98f1">is_input_filename</a> = false</td></tr>
+<tr class="separator:a2d37785d90a6690d96812c1e61ba98f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">AusfÃ¼hrliche Beschreibung</h2>
-<div class="textblock"><p>Im Modul huffman wird die Komprimierung und Dekomprimierung realisiert.</p>
+<div class="textblock"><p>In diesem Modul werden die Argumente, die per Komandozeile übergeben werden überprüft.</p>
 <dl class="section author"><dt>Autor</dt><dd>Dominik Krakau</dd></dl>
-<dl class="section date"><dt>Datum</dt><dd>2018-11-27 </dd></dl>
+<dl class="section date"><dt>Datum</dt><dd>2018-12-19 </dd></dl>
 </div><h2 class="groupheader">Dokumentation der Funktionen</h2>
-<a id="a0edda638e496e3309858596598ea3af8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0edda638e496e3309858596598ea3af8">&#9670;&nbsp;</a></span>copy_bits()</h2>
+<a id="a4e04f8070414a11c3d7126731f3b7d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e04f8070414a11c3d7126731f3b7d5e">&#9670;&nbsp;</a></span>process_arguments()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void copy_bits </td>
+          <td class="memname"><a class="el" href="a00014.html#a050a6400932e5be71a39b90c93cedf9a">EXIT_CODES</a> process_arguments </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>in</em>[], </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>out</em>[]&#160;</td>
+          <td class="paramtype">char ***&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -108,89 +135,251 @@ Funktionen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Kopiert den EIngabepuffer bitweise in den Ausgabepuffer. </p><dl class="params"><dt>Parameter</dt><dd>
+<p>Diese Funktion überprüft die übergebenen Komandozeielnargumente auf Korrektheit. </p><dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">in</td><td>Das zu kopierende Array. </td></tr>
-    <tr><td class="paramname">out</td><td>Das fertig kopierte Array. </td></tr>
+    <tr><td class="paramname">argc</td><td>Anzahl Komandozeilenargumente plus Programmname. </td></tr>
+    <tr><td class="paramname">argv</td><td>Die einzelenen Argumente in Stringform. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>RÃ¼ckgabe</dt><dd>Liefert einen Exit Code zurück, SUCCESS_RUN wenn kein Fehler und ARGUMENT_ERROR falls die Komandozeilen Fehler aufweisen. </dd></dl>
 <div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00002_a0edda638e496e3309858596598ea3af8_cgraph.png" border="0" usemap="#a00002_a0edda638e496e3309858596598ea3af8_cgraph" alt=""/></div>
-<map name="a00002_a0edda638e496e3309858596598ea3af8_cgraph" id="a00002_a0edda638e496e3309858596598ea3af8_cgraph">
-<area shape="rect" id="node2" href="a00011.html#a7415def789184df55b5ef296ec11bbcc" title="put_puffer_in" alt="" coords="132,5,231,32"/>
-<area shape="rect" id="node4" href="a00011.html#a7c5171055d16b868c0950ebaa863fb9a" title="has_next_bit" alt="" coords="134,56,229,83"/>
-<area shape="rect" id="node5" href="a00011.html#af327fb024bf283d68b012947f90b695f" title="read_bit" alt="" coords="147,107,216,133"/>
-<area shape="rect" id="node6" href="a00011.html#a412951eee447aafec3febe9ea6d8648a" title="write_bit" alt="" coords="145,157,217,184"/>
-<area shape="rect" id="node7" href="a00011.html#aa16077187079a05930d28047298db6d5" title="put_puffer_out" alt="" coords="128,208,235,235"/>
-<area shape="rect" id="node3" href="a00011.html#aebbba89eb574f823428be75d0ffc10c9" title="reset" alt="" coords="283,5,333,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a3e0f74a05ecef18ee19d91ab3a87d5a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e0f74a05ecef18ee19d91ab3a87d5a3">&#9670;&nbsp;</a></span>copy_chars()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void copy_chars </td>
-          <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>in</em>[], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>out</em>[]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Kopiert den Eingabepuffer byteweise in den Ausgabepuffer. </p><dl class="params"><dt>Parameter</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in</td><td>Das zu kopierende Array. </td></tr>
-    <tr><td class="paramname">out</td><td>Das fertig kopierte Array. </td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="dynheader">
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_cgraph.png" border="0" usemap="#a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_cgraph" alt=""/></div>
-<map name="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_cgraph" id="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_cgraph">
-<area shape="rect" id="node2" href="a00011.html#a7415def789184df55b5ef296ec11bbcc" title="put_puffer_in" alt="" coords="144,5,243,32"/>
-<area shape="rect" id="node4" href="a00011.html#ac1bce45959d6574dba72ecbd37c2e8d5" title="has_next_char" alt="" coords="141,56,246,83"/>
-<area shape="rect" id="node5" href="a00011.html#a882aef20c6681d7b896a7531407d96fa" title="read_char" alt="" coords="153,107,233,133"/>
-<area shape="rect" id="node6" href="a00011.html#a35537c78702136e92f57d1d4c2d15caf" title="write_char" alt="" coords="152,157,235,184"/>
-<area shape="rect" id="node7" href="a00011.html#aa16077187079a05930d28047298db6d5" title="put_puffer_out" alt="" coords="140,208,247,235"/>
-<area shape="rect" id="node3" href="a00011.html#aebbba89eb574f823428be75d0ffc10c9" title="reset" alt="" coords="295,5,345,32"/>
+<div class="center"><img src="a00002_a4e04f8070414a11c3d7126731f3b7d5e_cgraph.png" border="0" usemap="#a00002_a4e04f8070414a11c3d7126731f3b7d5e_cgraph" alt=""/></div>
+<map name="a00002_a4e04f8070414a11c3d7126731f3b7d5e_cgraph" id="a00002_a4e04f8070414a11c3d7126731f3b7d5e_cgraph">
+<area shape="rect" id="node2" href="a00002.html#ac3d738f0f7fc6ce3e4cc5f686d5de7f0" title="reset_values" alt="" coords="188,5,283,32"/>
+<area shape="rect" id="node3" href="a00002.html#aec315d77f5c38417289a0e311d2a9d31" title="showHelp" alt="" coords="197,56,274,83"/>
 </map>
 </div>
 <div class="dynheader">
 Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_icgraph.png" border="0" usemap="#a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_icgraph" alt=""/></div>
-<map name="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_icgraph" id="a00002_a3e0f74a05ecef18ee19d91ab3a87d5a3_icgraph">
-<area shape="rect" id="node2" href="a00017.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="140,5,191,32"/>
+<div class="center"><img src="a00002_a4e04f8070414a11c3d7126731f3b7d5e_icgraph.png" border="0" usemap="#a00002_a4e04f8070414a11c3d7126731f3b7d5e_icgraph" alt=""/></div>
+<map name="a00002_a4e04f8070414a11c3d7126731f3b7d5e_icgraph" id="a00002_a4e04f8070414a11c3d7126731f3b7d5e_icgraph">
+<area shape="rect" id="node2" href="a00023.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="188,5,239,32"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="ac3d738f0f7fc6ce3e4cc5f686d5de7f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3d738f0f7fc6ce3e4cc5f686d5de7f0">&#9670;&nbsp;</a></span>reset_values()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void reset_values </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setzt die Variablenwerte zurück. </p>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00002_ac3d738f0f7fc6ce3e4cc5f686d5de7f0_icgraph.png" border="0" usemap="#a00002_ac3d738f0f7fc6ce3e4cc5f686d5de7f0_icgraph" alt=""/></div>
+<map name="a00002_ac3d738f0f7fc6ce3e4cc5f686d5de7f0_icgraph" id="a00002_ac3d738f0f7fc6ce3e4cc5f686d5de7f0_icgraph">
+<area shape="rect" id="node2" href="a00005.html#a4e04f8070414a11c3d7126731f3b7d5e" title="process_arguments" alt="" coords="148,5,283,32"/>
+<area shape="rect" id="node3" href="a00023.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="331,5,381,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aec315d77f5c38417289a0e311d2a9d31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec315d77f5c38417289a0e311d2a9d31">&#9670;&nbsp;</a></span>showHelp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showHelp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gibt Informationen über die Programmbenutzung am Bildschirm aus. </p>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00002_aec315d77f5c38417289a0e311d2a9d31_icgraph.png" border="0" usemap="#a00002_aec315d77f5c38417289a0e311d2a9d31_icgraph" alt=""/></div>
+<map name="a00002_aec315d77f5c38417289a0e311d2a9d31_icgraph" id="a00002_aec315d77f5c38417289a0e311d2a9d31_icgraph">
+<area shape="rect" id="node2" href="a00005.html#a4e04f8070414a11c3d7126731f3b7d5e" title="process_arguments" alt="" coords="131,5,265,32"/>
+<area shape="rect" id="node3" href="a00023.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="313,5,364,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variablen-Dokumentation</h2>
+<a id="a8834d4dae74854bd816d9549200cf9a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8834d4dae74854bd816d9549200cf9a4">&#9670;&nbsp;</a></span>compressed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool compressed = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zeigt an, ob komprimiert werden soll. </p>
+
+</div>
+</div>
+<a id="af3202b9e00be3a2713775eec166be58a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3202b9e00be3a2713775eec166be58a">&#9670;&nbsp;</a></span>decompressed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool decompressed = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zeigt an, ob dekomprimiert werden soll. </p>
+
+</div>
+</div>
+<a id="a545363392790133c5dec1fd9e2cb279d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545363392790133c5dec1fd9e2cb279d">&#9670;&nbsp;</a></span>help</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool help = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zeigt an, ob die Programmhilfe ausgegeben werden soll. </p>
+
+</div>
+</div>
+<a id="ab3a88b183c8c84c0eafd43f2f40c7690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3a88b183c8c84c0eafd43f2f40c7690">&#9670;&nbsp;</a></span>info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool info = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zeigt an, ob Infos ausgegeben werden sollen. </p>
+
+</div>
+</div>
+<a id="aa88d763e9be7f135cb1810d0a8733977"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa88d763e9be7f135cb1810d0a8733977">&#9670;&nbsp;</a></span>input_filename</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char input_filename[<a class="el" href="a00020.html#a6773b93f3093658c3dcb569de3b4bdb2">MAX_FILENAME_LENGTH</a>] = {'\0'}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Name der Input-Datei. </p>
+
+</div>
+</div>
+<a id="a2d37785d90a6690d96812c1e61ba98f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d37785d90a6690d96812c1e61ba98f1">&#9670;&nbsp;</a></span>is_input_filename</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_input_filename = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zeigt an, ob es sich um einen Input Filename handelt. </p>
+
+</div>
+</div>
+<a id="a99e9667ea97bdf511cc167b924ec833c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e9667ea97bdf511cc167b924ec833c">&#9670;&nbsp;</a></span>level</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool level = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zeigt an, ob ein Level für die Komprimierung gesetzt werden soll. </p>
+
+</div>
+</div>
+<a id="a564abc27b126ef392d7b1d74b3a0461f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a564abc27b126ef392d7b1d74b3a0461f">&#9670;&nbsp;</a></span>level_number</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int level_number = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Levelnummer der Komprimierung. </p>
+
+</div>
+</div>
+<a id="aa4a779509a406004de8dbf10c9bf757f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a779509a406004de8dbf10c9bf757f">&#9670;&nbsp;</a></span>output_comand</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool output_comand = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zeigt an, ob es ein -o Kommando gibt. </p>
+
+</div>
+</div>
+<a id="a14cab49446682c06b736c22b95bd2745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14cab49446682c06b736c22b95bd2745">&#9670;&nbsp;</a></span>output_filename</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char output_filename[<a class="el" href="a00020.html#a6773b93f3093658c3dcb569de3b4bdb2">MAX_FILENAME_LENGTH</a>] = {'\0'}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Name der Output-Datei. </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Mit Nov 28 2018 20:30:26 von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Don Dez 20 2018 02:36:34 von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

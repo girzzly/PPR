@@ -1,8 +1,0 @@
-<map id="copy_bits" name="copy_bits">
-<area shape="rect" id="node2" href="$a00011.html#a7415def789184df55b5ef296ec11bbcc" title="put_puffer_in" alt="" coords="132,5,231,32"/>
-<area shape="rect" id="node4" href="$a00011.html#a7c5171055d16b868c0950ebaa863fb9a" title="has_next_bit" alt="" coords="134,56,229,83"/>
-<area shape="rect" id="node5" href="$a00011.html#af327fb024bf283d68b012947f90b695f" title="read_bit" alt="" coords="147,107,216,133"/>
-<area shape="rect" id="node6" href="$a00011.html#a412951eee447aafec3febe9ea6d8648a" title="write_bit" alt="" coords="145,157,217,184"/>
-<area shape="rect" id="node7" href="$a00011.html#aa16077187079a05930d28047298db6d5" title="put_puffer_out" alt="" coords="128,208,235,235"/>
-<area shape="rect" id="node3" href="$a00011.html#aebbba89eb574f823428be75d0ffc10c9" title="reset" alt="" coords="283,5,333,32"/>
-</map>

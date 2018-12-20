@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['in_5fpuffer',['in_puffer',['../a00011.html#a7f7799d60cac863efaeeb2434e9ca960',1,'io.c']]],
-  ['index_5fbit',['index_bit',['../a00011.html#abf686f8144513327bf98a91ab2afc4f6',1,'io.c']]],
-  ['index_5fbyte',['index_byte',['../a00011.html#adcafe17038c0b439b91e2d163fe63de5',1,'io.c']]]
+  ['decompresed',['decompresed',['../a00023.html#a2f6c43dc44f7b7f31fe1626f9e965cfe',1,'main.c']]],
+  ['decompressed',['decompressed',['../a00002.html#af3202b9e00be3a2713775eec166be58a',1,'decompressed():&#160;argument_validation.c'],['../a00005.html#af3202b9e00be3a2713775eec166be58a',1,'decompressed():&#160;argument_validation.c']]]
 ];

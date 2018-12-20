@@ -29,7 +29,7 @@ clock_t prg_end;
 bool is_input_filename;
 
 /** Zeigt an ob Komprimiert werden soll. */
-bool compresed;
+bool compressed;
 
 /** Zeigt an ob Dekomprimiert werden soll. */
 bool decompresed;
@@ -48,30 +48,32 @@ bool help;
 int main(int argc, char** argv)
 {
     prg_start = clock();
-    
+
     EXIT_CODES exit_code = process_arguments(argc, &argv);
 
     if (exit_code == SUCCESS_RUN)
     {
-        
-        if(compresed && !help) {
+
+        if (compressed && !help)
+        {
             compress(input_filename, output_filename);
         }
-        else if(!compresed && !help) {
+        else if (!compressed && !help)
+        {
             decompress(input_filename, output_filename);
         }
-       
+
     }
 
     prg_end = clock();
-    
-    if(info && (compresed || decompresed) && is_input_filename)
+
+    if (info && (compressed || decompresed) && is_input_filename)
     {
         showInfo(input_filename, output_filename, prg_start, prg_end);
     }
-    
-    printf("Program terminated with exit code %d.\n", exit_code);
-    
+
+//    printf("Program terminated with exit code %d.\n", exit_code);
+
     return (exit_code);
 }
 

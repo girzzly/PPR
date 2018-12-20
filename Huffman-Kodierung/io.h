@@ -86,7 +86,6 @@ extern size_t write_file();
  * Diese Funktion öffnet die Eingabedatei und initisiert
  * den Ausgabepuffer als leer.
  * @param in_filename Name der Eingabedatei.
- * @param in_stream Filestream der Eingabedatei.
  * @return Liefer einen Exit Code zurück SUCCESS_RUN, wenn öffen erflogreich
  *         war und IO_ERROR, falls das Öffnen Fehlerhaft war.
  */
@@ -96,7 +95,6 @@ extern EXIT_CODES open_infile(char *in_filename);
  * Diese Funktion öffnet die Ausgabedatei und initisiert
  * den Eingabepuffer als leer.
  * @param out_filename Name der Ausgabedatei.
- * @param out_stream Filestream der Ausgabedatei.
  * @return Liefer einen Exit Code zurück SUCCESS_RUN, wenn öffen erflogreich
  *         war und IO_ERROR, falls das Öffnen Fehlerhaft war.
  */

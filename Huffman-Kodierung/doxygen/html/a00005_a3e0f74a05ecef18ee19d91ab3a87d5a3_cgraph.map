@@ -1,8 +1,0 @@
-<map id="copy_chars" name="copy_chars">
-<area shape="rect" id="node2" href="$a00011.html#a7415def789184df55b5ef296ec11bbcc" title="put_puffer_in" alt="" coords="144,5,243,32"/>
-<area shape="rect" id="node4" href="$a00011.html#ac1bce45959d6574dba72ecbd37c2e8d5" title="has_next_char" alt="" coords="141,56,246,83"/>
-<area shape="rect" id="node5" href="$a00011.html#a882aef20c6681d7b896a7531407d96fa" title="read_char" alt="" coords="153,107,233,133"/>
-<area shape="rect" id="node6" href="$a00011.html#a35537c78702136e92f57d1d4c2d15caf" title="write_char" alt="" coords="152,157,235,184"/>
-<area shape="rect" id="node7" href="$a00011.html#aa16077187079a05930d28047298db6d5" title="put_puffer_out" alt="" coords="140,208,247,235"/>
-<area shape="rect" id="node3" href="$a00011.html#aebbba89eb574f823428be75d0ffc10c9" title="reset" alt="" coords="295,5,345,32"/>
-</map>

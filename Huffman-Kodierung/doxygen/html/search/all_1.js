@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['copy_5fbits',['copy_bits',['../a00002.html#a0edda638e496e3309858596598ea3af8',1,'copy_bits(char in[], char out[]):&#160;huffmann.c'],['../a00005.html#a0edda638e496e3309858596598ea3af8',1,'copy_bits(char in[], char out[]):&#160;huffmann.c']]],
-  ['copy_5fchars',['copy_chars',['../a00002.html#a3e0f74a05ecef18ee19d91ab3a87d5a3',1,'copy_chars(char in[], char out[]):&#160;huffmann.c'],['../a00005.html#a3e0f74a05ecef18ee19d91ab3a87d5a3',1,'copy_chars(char in[], char out[]):&#160;huffmann.c']]],
-  ['cprint',['CPRINT',['../a00008.html#a2b1b110191516412ca043dc77d4a98a7',1,'huffmann_common.h']]],
-  ['cprintln',['CPRINTLN',['../a00008.html#ab7e84b3457552dbafed7c3e90867913c',1,'huffmann_common.h']]]
+  ['bit',['BIT',['../a00014.html#a42de1d3bbaa4989a0bb0ea5c6923dccb',1,'huffmann_common.h']]],
+  ['br',['BR',['../a00014.html#afa556a68b7c0fcc58cd87c5f36859f30',1,'huffmann_common.h']]],
+  ['buf_5fsize',['BUF_SIZE',['../a00020.html#a6821bafc3c88dfb2e433a095df9940c6',1,'io.h']]],
+  ['byte_5fsize',['BYTE_SIZE',['../a00017.html#a86fd4404b140711fdb77326609c0f393',1,'io.c']]]
 ];
