@@ -16,56 +16,35 @@
 #ifndef _ARGUMENT_VALIDATION_H
 #define _ARGUMENT_VALIDATION_H
 
-/** Zeigt an, ob komprimiert werden soll. */
-extern bool compressed;
-
-/** Zeigt an, ob dekomprimiert werden soll. */
-extern bool decompressed;
-
-/** Zeigt an, ob Infos ausgegeben werden sollen. */
-extern bool info;
-
-/** Zeigt an, ob die Programmhilfe ausgegeben werden soll. */
-extern bool help;
-
-/** Zeigt an, ob ein Level für die Komprimierung gesetzt werden soll. */
-extern bool level;
-
-/** Levelnummer der Komprimierung. */
-extern int level_number;
-
-/** Zeigt an, ob es ein -o Kommando gibt. */
-extern bool output_comand;
-
-/** Zeigt an, ob es sich um einen Input Filename handelt. */
-extern bool is_input_filename;
-
 /**
  * Diese Funktion überprüft die übergebenen Komandozeielnargumente auf
  * Korrektheit.
- * @param argc Anzahl Komandozeilenargumente plus Programmname.
- * @param argv Die einzelenen Argumente in Stringform.
- * @return Liefert einen Exit Code zurück, SUCCESS_RUN wenn kein Fehler und
- *         ARGUMENT_ERROR falls die Komandozeilen Fehler aufweisen.
+ * @param argc              Anzahl Komandozeilenargumente plus Programmname.
+ * @param argv              Die einzelenen Argumente in Stringform.
+ * @param compressed        Zeiger zur Prüfung auf Komprimierung.
+ * @param decompressed      Zeiger zur Prüfung auf Dekomprimierung.
+ * @param info              Zeiger zur Prüfung auf Informaitonsanzeige.
+ * @param help              Zeiger zur Prüfung auf Hilfsanzeige.
+ * @param level             Zeiger zur Prüfung auf gesetztes Level.
+ * @param level_number      Gibt das Komprimierungslevel an.
+ * @param output_comand     Gibt an ob eine Outputoption angegeben wurde.
+ * @param is_input_filename Gibt an ob ein Inputfile angegegben wurde.
+ * @param output_filename   Name des Outputfiles.
+ * @param input_filename    Name des Inputfiles.
+ * @return Liefer einen Error Code zurück. SUCCESS_RUN wenn kein Fehler vorliegt,
+ *         ansonsten ARGUMENTS_ERROR.
  */
-extern EXIT_CODES process_arguments(int argc, char*** argv);
+extern EXIT_CODES process_arguments(int argc, char*** argv,
+                             bool *compressed, bool *decompressed,
+                             bool *info, bool *help,
+                             bool *level, int *level_number,
+                             bool *output_comand, bool *is_input_filename,
+                             char **output_filename, char **input_filename);
 
 /**
  * Gibt Informationen über die Programmbenutzung am Bildschirm aus.
  */
-extern void showHelp();
-
-/**
- * Dise Funktion gibt den Inputfilenamen zurück.
- * @return Liefert einen Char-Pointer auf den Inputfilenamen zurück.
- */
-extern char* get_input_filename();
-
-/**
- * Dise Funktion gibt den Outputfilenamen zurück.
- * @return Liefert einen Char-Pointer auf den Outputfilenamen zurück.
- */
-extern char* get_output_filename();
+extern void show_help();
 
 #endif
 

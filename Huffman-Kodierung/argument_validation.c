@@ -9,6 +9,7 @@
  * @date 2018-12-19
  */
 
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -17,48 +18,28 @@
 #include "argument_validation.h"
 #include "io.h"
 
-/** Zeigt an, ob komprimiert werden soll. */
-bool compressed = false;
-
-/** Zeigt an, ob dekomprimiert werden soll. */
-bool decompressed = false;
-
-/** Zeigt an, ob Infos ausgegeben werden sollen. */
-bool info = false;
-
-/** Zeigt an, ob die Programmhilfe ausgegeben werden soll. */
-bool help = false;
-
-/** Zeigt an, ob ein Level für die Komprimierung gesetzt werden soll. */
-bool level = true;
-
-/** Levelnummer der Komprimierung. */
-int level_number = 2;
-
-/** Zeigt an, ob es ein -o Kommando gibt. */
-bool output_comand = false;
-
-/** Zeigt an, ob es sich um einen Input Filename handelt. */
-bool is_input_filename = false;
-
-/** Name der Inputdatei. */
-static char input_filename[MAX_FILENAME_LENGTH] = {'\0'};
-
-/** Name der Outputdatei. */
-static char output_filename[MAX_FILENAME_LENGTH] = {'\0'};
-
-
-/**
- * Setzt die Variablenwerte zurück.
- */
-static void reset_values();
-
-
-EXIT_CODES process_arguments(int argc, char*** argv)
+extern EXIT_CODES process_arguments(int argc, char*** argv,
+                             bool *compressed, bool *decompressed,
+                             bool *info, bool *help,
+                             bool *level, int *level_number,
+                             bool *output_comand, bool *is_input_filename,
+                             char **output_filename, char **input_filename)
 {
+
     EXIT_CODES exit_code = SUCCESS_RUN;
 
-    reset_values();
+    *compressed = false;
+    *decompressed = false;
+
+    *info = false;
+    *help = false;
+
+    *level = true;
+    *level_number = 2;
+
+    *output_comand = false;
+
+    *is_input_filename = false;
 
     int i;
     for (i = 1; i < argc; i++)
@@ -67,29 +48,29 @@ EXIT_CODES process_arguments(int argc, char*** argv)
 
         if (strcmp(**argv, "-c") == 0)
         {
-            if (decompressed == true)
+            if (*decompressed == true)
             {
-                decompressed = false;
+                *decompressed = false;
             }
 
-            compressed = true;
+            *compressed = true;
         }
         else if (strcmp(**argv, "-d") == 0)
         {
-            if (compressed == true)
+            if (*compressed == true)
             {
-                compressed = false;
+                *compressed = false;
             }
 
-            decompressed = true;
+            *decompressed = true;
         }
         else if (strcmp(**argv, "-v") == 0)
         {
-            info = true;
+            *info = true;
         }
         else if (strcmp(**argv, "-h") == 0)
         {
-            help = true;
+            *help = true;
         }
         else if (strcmp(**argv, "-o") == 0)
         {
@@ -97,8 +78,8 @@ EXIT_CODES process_arguments(int argc, char*** argv)
             i++;
             if (***argv != '-')
             {
-                output_comand = true;
-                strncpy(output_filename, **argv, strlen(**argv));
+                *output_comand = true;
+                *output_filename = **argv;
             }
             else
             {
@@ -120,21 +101,21 @@ EXIT_CODES process_arguments(int argc, char*** argv)
                     {
                         if (***argv > 48 && ***argv < 58 && comand_length == 3)
                         {
-                            level_number = ***argv - 48;
+                            *level_number = ***argv - 48;
                         }
                         else
                         {
                             // wrong level_number!
-                            level = false;
-                            level_number = 0;
+                            *level = false;
+                            *level_number = 0;
                             exit_code = ARGUMENTS_ERROR;
                         }
                     }
                     else
                     {
                         // no level_number!
-                        level = false;
-                        level_number = 0;
+                        *level = false;
+                        *level_number = 0;
                         exit_code = ARGUMENTS_ERROR;
                     }
                 }
@@ -146,9 +127,8 @@ EXIT_CODES process_arguments(int argc, char*** argv)
             }
             else if (***argv != '-' && i == argc - 1)
             {
-                is_input_filename = true;
-                strncpy(input_filename, **argv, strlen(**argv));
-                //                input_filename = **argv;
+                *is_input_filename = true;
+                *input_filename = **argv;
             }
             else
             {
@@ -158,33 +138,41 @@ EXIT_CODES process_arguments(int argc, char*** argv)
         }
     }
 
-    if (decompressed == true)
+    if (*decompressed == true)
     {
-        level = false;
-        level_number = 0;
+        *level = false;
+        *level_number = 0;
     }
-    if (output_comand == false)
-    {
-        strncpy(output_filename, input_filename, strlen(input_filename));
+    
+    if (*output_comand == false)
+    {       
+        *output_filename = malloc((strlen(*input_filename) + 4) * sizeof (char));
+        strncpy(*output_filename, *input_filename, strlen(*input_filename));
 
-        if (decompressed && is_input_filename)
+        if (*decompressed && *is_input_filename)
         {
-            strcat(output_filename, ".hd\0");
+            strncat(*output_filename, ".hd", strlen(*output_filename));
 
         }
         else
         {
-            strcat(output_filename, ".hc\0");
+            strncat(*output_filename, ".hc", strlen(*output_filename));
+        } 
+    } 
+    else {
+        if (strcmp(*input_filename, *output_filename) == 0) // output and input have same names!
+        {
+            exit_code = ARGUMENTS_ERROR;
         }
     }
-
-    if (help || (exit_code == SUCCESS_RUN && (decompressed || compressed) && is_input_filename))
+    
+    if(fopen(*input_filename, "rb") == NULL) // file does not exists!
     {
-        if (help)
-        {
-            showHelp();
-        }
-        
+        exit_code = ARGUMENTS_ERROR;
+    }
+
+    if (*help || (exit_code == SUCCESS_RUN && (*decompressed || *compressed) && *is_input_filename))
+    {
         exit_code = SUCCESS_RUN;
     }
     else
@@ -192,77 +180,56 @@ EXIT_CODES process_arguments(int argc, char*** argv)
         exit_code = ARGUMENTS_ERROR;
     }
 
+    if (*help)
+    {
+        show_help();
+    }
+
     // Debugg Hilfe
-//    printf("--------------------------------\n");
-//    printf("Compress: %d\n", compressed);
-//    printf("Decompress: %d\n", decompressed);
-//    printf("Level: %d   Level-Nr: %d\n", level, level_number);
-//    printf("Info: %d\n", info);
-//    printf("Help: %d\n", help);
-//    printf("Output: %d   %s\n", output_comand, (char *) output_filename);
-//    printf("Filename: %d   %s\n", is_input_filename, (char *) input_filename);
-//    printf("--------------------------------\n");
+    printf("--------------------------------\n");
+    printf("Compress: %d\n", *compressed);
+    printf("Decompress: %d\n", *decompressed);
+    printf("Level: %d   Level-Nr: %d\n", *level, *level_number);
+    printf("Info: %d\n", *info);
+    printf("Help: %d\n", *help);
+    printf("Output: %d   %s\n", *output_comand, *output_filename);
+    printf("Filename: %d   %s\n", *is_input_filename, *input_filename);
+    printf("--------------------------------\n");
 
     return exit_code;
 }
 
-extern void showHelp()
+extern void show_help()
 {
-    printf("Usage: huffmann_kodierung [OPTIONS]... [FILENAME]...\n");
-    printf("Komprimiert oder Dekomprimiert Textdatein\nim Sinne der Huffman-Kodierung.\n\n");
+    printf("Benutzung: huffmann_kodierung [OPTIONS]... [FILENAME]...\n"
+           "Komprimiert oder Dekomprimiert Textdatein\nim Sinne der Huffman-Kodierung.\n\n"
 
-    printf("Arguments:\n");
-    printf("\t-c\tDie Eingabedatei wird komprimiert.\n\n");
-    printf("\t-d\tDie Eingabedatei wird dekomprimiert.\n\n");
-    
-    printf("\t-h\tZeigt eine Hilfe an, die die Benutzung des Programms erklaert.\n\n");
-    
-    printf("\t-l\tLegt den Level der Komprimierung fest. Der Wert für den Level\n");
-    printf("  \t\tfolgt ohne Leerzeichen auf die Option -l und muss zwischen 1\n");  
-    printf("  \t\tund 9 liegen. Fehlt die Option, wird der Level standardmaessig\n");
-    printf("  \t\tauf 2 eingestellt. Der Parameter wird ignoriert, wenn die Option\n");
-    printf("  \t\t-d angegeben wurde.\n\n");
-    
-    printf("\t-o\tLegt den Namen der Ausgabedatei fest. Wird die Option weggelassen,\n");
-    printf("  \t\twird der Name der Ausgabedatei standardmaessig festgelegt.\n");
-    printf("  \t\tDazu wird bei einer Komprimierung der Dateiname um\n");
-    printf("  \t\tie Endung .hc und bei einer Dekomprimierung um die\n");
-    printf("  \t\tEndung .hd erweitert.\n\n");
-    
-    printf("\t-v\tGibt Informationen über die Komprimierung bzw. Dekomprimierung\n");
-    printf("  \t\taus, mind. die Groesse der Ein- und der Ausgabedatei\n");
-    printf("  \t\tsowie die Programmlaufzeit in Sekunden.\n\n");
-    
-    printf("\t<filename>\tName der Eingabedatei.\n\n");
+           "Argumente:\n"
+           "\t-c\tDie Eingabedatei wird komprimiert.\n\n"
+           "\t-d\tDie Eingabedatei wird dekomprimiert.\n\n"
 
-    printf("Exsamples:\n");
-    printf("\thuffman_codierung -h\n");
-    printf("\thuffman_codierung -d <filename>\n");
-    printf("\thuffman_codierung -c -v -l3 -o <outputfilename> <inputfilename>\n\n");
-}
+           "\t-h\tZeigt eine Hilfe an, die die Benutzung des Programms erklaert.\n\n"
 
-static void reset_values()
-{
-    compressed = false;
-    decompressed = false;
-    info = false;
-    help = false;
+           "\t-l\tLegt den Level der Komprimierung fest. Der Wert für den Level\n"
+           "  \t\tfolgt ohne Leerzeichen auf die Option -l und muss zwischen 1\n"
+           "  \t\tund 9 liegen. Fehlt die Option, wird der Level standardmaessig\n"
+           "  \t\tauf 2 eingestellt. Der Parameter wird ignoriert, wenn die Option\n"
+           "  \t\t-d angegeben wurde.\n\n"
 
-    level = true;
-    level_number = 2;
+           "\t-o\tLegt den Namen der Ausgabedatei fest. Wird die Option weggelassen,\n"
+           "  \t\twird der Name der Ausgabedatei standardmaessig festgelegt.\n"
+           "  \t\tDazu wird bei einer Komprimierung der Dateiname um\n"
+           "  \t\tie Endung .hc und bei einer Dekomprimierung um die\n"
+           "  \t\tEndung .hd erweitert.\n\n"
 
-    output_comand = false;
-    is_input_filename = false;
-}
+           "\t-v\tGibt Informationen über die Komprimierung bzw. Dekomprimierung\n"
+           "  \t\taus, mind. die Groesse der Ein- und der Ausgabedatei\n"
+           "  \t\tsowie die Programmlaufzeit in Sekunden.\n\n"
 
-extern char* get_input_filename()
-{
-    char *p = input_filename;
-    return p;
-}
+           "\t<filename>\tName der Eingabedatei.\n\n"
 
-extern char* get_output_filename()
-{
-    char *p = output_filename;
-    return p;
+           "Beispiele:\n"
+           "\thuffman_codierung -h\n"
+           "\thuffman_codierung -d <filename>\n"
+           "\thuffman_codierung -c -v -l3 -o <outputfilename> <inputfilename>\n\n");
 }
