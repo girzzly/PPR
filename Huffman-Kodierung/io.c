@@ -68,14 +68,36 @@ static unsigned char in_puffer[BUF_SIZE];
 /** Bitspeicher. */
 static unsigned char out_puffer[BUF_SIZE];
 
+
 /**
- * Setzt die Indexe und den Füllstand der Puffer zurück.
+ * Setzt die Indexe und den Füllstand aller Puffer zurück.
  */
 static void reset(void);
+
+/**
+ * Liest aus einer Datei die maximale Blockgröße 
+ * und schreibt den Inhalt in den in_puffer.
+ * @return Gelesene Anzahl der Zeichen.
+ */
+static size_t read_next_block();
+
+/**
+ * Schreibt den Inhalt des out_puffers in eine Datei 
+ * bis verbleibende Blockgröße erreicht ist.
+ * @return Geschriebene Anzahl der Zeichen.
+ */
+static size_t write_block();
+
+/**
+ * Verwaltet den Schreib- und Lesefluss für die Ein- und Ausgabedateien.
+ */
+static void manage_file(void);
 
 
 extern bool has_next_char(void)
 {
+    manage_file();
+
     return index_byte < fill_level_in_puffer;
 }
 
@@ -93,6 +115,8 @@ extern void write_char(unsigned char c)
 
 extern bool has_next_bit(void)
 {
+    manage_file();
+
     return (index_bit < fill_level_in_puffer) && (position_bit < BYTE_SIZE);
 }
 
@@ -116,6 +140,15 @@ extern void write_bit(BIT c)
     fill_level_out_puffer = index_bit;
 }
 
+static void manage_file(void)
+{ 
+    if (fill_level_out_puffer == fill_level_in_puffer)
+    {
+        write_block();
+        read_next_block();
+    }
+}
+
 static void reset(void)
 {
     index_byte = 0;
@@ -124,24 +157,23 @@ static void reset(void)
     position_bit = 0;
 
     fill_level_out_puffer = 0;
+    fill_level_in_puffer = 0;
 }
 
-extern size_t read_file()
+static size_t read_next_block()
 {
     reset();
-    size_t r = fread(in_puffer, sizeof (char), BUF_SIZE, input_file_stream);
-    fill_level_in_puffer = strlen((char*) in_puffer);
-    
+    size_t readed_blocks = fread(in_puffer, sizeof (char), BUF_SIZE, input_file_stream);
+    fill_level_in_puffer = readed_blocks;
 
-    return r;
+    return readed_blocks;
 }
 
-extern size_t write_file()
+static size_t write_block()
 {
-    size_t w = fwrite(out_puffer, sizeof (char), fill_level_out_puffer, output_file_stream);
-    memset(out_puffer, '\0', BUF_SIZE);
+    size_t writed_blocks = fwrite(out_puffer, sizeof (char), fill_level_out_puffer, output_file_stream);
 
-    return w;
+    return writed_blocks;
 }
 
 extern EXIT_CODES open_infile(char *in_filename)
@@ -149,6 +181,12 @@ extern EXIT_CODES open_infile(char *in_filename)
     EXIT_CODES exit_code = SUCCESS_RUN;
 
     input_file_stream = fopen(in_filename, "rb");
+    
+//    reset();
+    fill_level_in_puffer = 0;
+
+    fread(in_puffer, sizeof (char), BUF_SIZE, input_file_stream);
+    fill_level_in_puffer = strlen((char*) in_puffer);
 
     if (input_file_stream == NULL)
     {
@@ -156,11 +194,7 @@ extern EXIT_CODES open_infile(char *in_filename)
         printf("IO ERROR: Fehler beim oeffnen der Eingabedatei.");
         exit(exit_code);
     }
-    else
-    {
-        reset();
-    }
-
+    
     return exit_code;
 }
 
@@ -169,16 +203,14 @@ extern EXIT_CODES open_outfile(char *out_filename)
     EXIT_CODES exit_code = SUCCESS_RUN;
 
     output_file_stream = fopen(out_filename, "wb");
+    
+    fill_level_out_puffer = 0;
 
     if (output_file_stream == NULL)
     {
         exit_code = IO_ERROR;
         printf("IO ERROR: Fehler beim oeffnen der Ausgabedatei.");
         exit(exit_code);
-    }
-    else
-    {
-        memset(in_puffer, '\0', BUF_SIZE);
     }
 
     return exit_code;
@@ -202,7 +234,7 @@ extern EXIT_CODES close_outfile()
 {
     EXIT_CODES exit_code = SUCCESS_RUN;
 
-    write_file();
+    write_block();
 
     if (fclose(output_file_stream) == EOF)
     {

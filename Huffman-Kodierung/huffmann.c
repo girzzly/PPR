@@ -20,17 +20,12 @@ extern void compress(char in_filename[], char out_filename[])
     open_infile((char *) in_filename);
     open_outfile((char *) out_filename);
 
-    while (read_file() > 0)
+    unsigned char c;
+
+    while (has_next_char())
     {
-        unsigned char c;
-
-        while (has_next_char())
-        {
-            c = read_char();
-            write_char(c);
-        }
-
-        write_file();
+        c = read_char();
+        write_char(c);
     }
 
     close_infile();
@@ -42,17 +37,12 @@ extern void decompress(char in_filename[], char out_filename[])
     open_infile((char *) in_filename);
     open_outfile((char *) out_filename);
 
-    while (read_file() > 0)
+    BIT c;
+
+    while (has_next_bit())
     {
-        BIT c;
-
-        while (has_next_bit())
-        {
-            c = read_bit();
-            write_bit(c);
-        }
-
-        write_file();
+        c = read_bit();
+        write_bit(c);
     }
 
     close_infile();

@@ -15,6 +15,7 @@
 #include <stdlib.h>
 
 #include <string.h>
+#include <time.h>
 
 #include "huffmann_common.h"
 #include "argument_validation.h"
@@ -75,17 +76,9 @@ int main(int argc, char** argv)
                                              &is_input_filename,
                                              &output_filename,
                                              &input_filename);
-    
-    
-    
-//    char in_filename[MAX_FILENAME_LENGTH] = {'\0'};
-//    char out_filename[MAX_FILENAME_LENGTH] = {'\0'};
-//    strncpy(in_filename, input_filename, strlen(input_filename));
-//    strncpy(out_filename, output_filename, strlen(output_filename));
 
     if (exit_code == SUCCESS_RUN)
     {
-        printf("o: %s", output_filename);
 
         if (compressed && !help)
         {

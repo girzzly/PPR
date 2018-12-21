@@ -9,6 +9,7 @@
  * @date 2018-12-19
  */
 
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -17,7 +18,7 @@
 #include "argument_validation.h"
 #include "io.h"
 
-EXIT_CODES process_arguments(int argc, char*** argv,
+extern EXIT_CODES process_arguments(int argc, char*** argv,
                              bool *compressed, bool *decompressed,
                              bool *info, bool *help,
                              bool *level, int *level_number,
@@ -143,10 +144,9 @@ EXIT_CODES process_arguments(int argc, char*** argv,
         *level_number = 0;
     }
     if (*output_comand == false)
-    {
-        char name[MAX_FILENAME_LENGTH];
-        strncpy(name, *input_filename, strlen(*input_filename));
-        *output_filename = name;
+    {       
+        *output_filename = malloc((strlen(*input_filename) + 4) * sizeof (char));
+        strncpy(*output_filename, *input_filename, strlen(*input_filename));
 
         if (*decompressed && *is_input_filename)
         {
@@ -168,12 +168,12 @@ EXIT_CODES process_arguments(int argc, char*** argv,
     {
         exit_code = ARGUMENTS_ERROR;
     }
-    
+
     if (*help)
     {
         show_help();
     }
-    
+
     // Debugg Hilfe
     printf("--------------------------------\n");
     printf("Compress: %d\n", *compressed);
@@ -190,35 +190,35 @@ EXIT_CODES process_arguments(int argc, char*** argv,
 
 extern void show_help()
 {
-    printf("Usage: huffmann_kodierung [OPTIONS]... [FILENAME]...\n");
-    printf("Komprimiert oder Dekomprimiert Textdatein\nim Sinne der Huffman-Kodierung.\n\n");
+    printf("Usage: huffmann_kodierung [OPTIONS]... [FILENAME]...\n"
+           "Komprimiert oder Dekomprimiert Textdatein\nim Sinne der Huffman-Kodierung.\n\n"
 
-    printf("Arguments:\n");
-    printf("\t-c\tDie Eingabedatei wird komprimiert.\n\n");
-    printf("\t-d\tDie Eingabedatei wird dekomprimiert.\n\n");
+           "Arguments:\n"
+           "\t-c\tDie Eingabedatei wird komprimiert.\n\n"
+           "\t-d\tDie Eingabedatei wird dekomprimiert.\n\n"
 
-    printf("\t-h\tZeigt eine Hilfe an, die die Benutzung des Programms erklaert.\n\n");
+           "\t-h\tZeigt eine Hilfe an, die die Benutzung des Programms erklaert.\n\n"
 
-    printf("\t-l\tLegt den Level der Komprimierung fest. Der Wert für den Level\n");
-    printf("  \t\tfolgt ohne Leerzeichen auf die Option -l und muss zwischen 1\n");
-    printf("  \t\tund 9 liegen. Fehlt die Option, wird der Level standardmaessig\n");
-    printf("  \t\tauf 2 eingestellt. Der Parameter wird ignoriert, wenn die Option\n");
-    printf("  \t\t-d angegeben wurde.\n\n");
+           "\t-l\tLegt den Level der Komprimierung fest. Der Wert für den Level\n"
+           "  \t\tfolgt ohne Leerzeichen auf die Option -l und muss zwischen 1\n"
+           "  \t\tund 9 liegen. Fehlt die Option, wird der Level standardmaessig\n"
+           "  \t\tauf 2 eingestellt. Der Parameter wird ignoriert, wenn die Option\n"
+           "  \t\t-d angegeben wurde.\n\n"
 
-    printf("\t-o\tLegt den Namen der Ausgabedatei fest. Wird die Option weggelassen,\n");
-    printf("  \t\twird der Name der Ausgabedatei standardmaessig festgelegt.\n");
-    printf("  \t\tDazu wird bei einer Komprimierung der Dateiname um\n");
-    printf("  \t\tie Endung .hc und bei einer Dekomprimierung um die\n");
-    printf("  \t\tEndung .hd erweitert.\n\n");
+           "\t-o\tLegt den Namen der Ausgabedatei fest. Wird die Option weggelassen,\n"
+           "  \t\twird der Name der Ausgabedatei standardmaessig festgelegt.\n"
+           "  \t\tDazu wird bei einer Komprimierung der Dateiname um\n"
+           "  \t\tie Endung .hc und bei einer Dekomprimierung um die\n"
+           "  \t\tEndung .hd erweitert.\n\n"
 
-    printf("\t-v\tGibt Informationen über die Komprimierung bzw. Dekomprimierung\n");
-    printf("  \t\taus, mind. die Groesse der Ein- und der Ausgabedatei\n");
-    printf("  \t\tsowie die Programmlaufzeit in Sekunden.\n\n");
+           "\t-v\tGibt Informationen über die Komprimierung bzw. Dekomprimierung\n"
+           "  \t\taus, mind. die Groesse der Ein- und der Ausgabedatei\n"
+           "  \t\tsowie die Programmlaufzeit in Sekunden.\n\n"
 
-    printf("\t<filename>\tName der Eingabedatei.\n\n");
+           "\t<filename>\tName der Eingabedatei.\n\n"
 
-    printf("Exsamples:\n");
-    printf("\thuffman_codierung -h\n");
-    printf("\thuffman_codierung -d <filename>\n");
-    printf("\thuffman_codierung -c -v -l3 -o <outputfilename> <inputfilename>\n\n");
+           "Exsamples:\n"
+           "\thuffman_codierung -h\n"
+           "\thuffman_codierung -d <filename>\n"
+           "\thuffman_codierung -c -v -l3 -o <outputfilename> <inputfilename>\n\n");
 }
