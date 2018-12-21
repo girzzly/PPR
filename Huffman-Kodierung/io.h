@@ -118,7 +118,7 @@ extern EXIT_CODES close_outfile();
  * @param prg_start Der Startzeitpunkt des Programms.
  * @param prg_end Der Endzeitpunkt des Programms.
  */
-extern void showInfo(char *in_filename, char *out_filename, clock_t prg_start, clock_t prg_end);
+extern void show_info(char *in_filename, char *out_filename, clock_t prg_start, clock_t prg_end);
 
 
 #endif

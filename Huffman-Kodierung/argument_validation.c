@@ -157,6 +157,7 @@ EXIT_CODES process_arguments(int argc, char*** argv,
         {
             strncat(*output_filename, ".hc", strlen(*output_filename));
         }
+        
     }
 
     if (*help || (exit_code == SUCCESS_RUN && (*decompressed || *compressed) && *is_input_filename))
@@ -170,11 +171,9 @@ EXIT_CODES process_arguments(int argc, char*** argv,
     
     if (*help)
     {
-        showHelp();
+        show_help();
     }
-
     
-
     // Debugg Hilfe
     printf("--------------------------------\n");
     printf("Compress: %d\n", *compressed);
@@ -189,7 +188,7 @@ EXIT_CODES process_arguments(int argc, char*** argv,
     return exit_code;
 }
 
-extern void showHelp()
+extern void show_help()
 {
     printf("Usage: huffmann_kodierung [OPTIONS]... [FILENAME]...\n");
     printf("Komprimiert oder Dekomprimiert Textdatein\nim Sinne der Huffman-Kodierung.\n\n");

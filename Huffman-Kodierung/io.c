@@ -128,7 +128,6 @@ static void reset(void)
 
 extern size_t read_file()
 {
-//    memset(in_puffer, '\0', BUF_SIZE);
     reset();
     size_t r = fread(in_puffer, sizeof (char), BUF_SIZE, input_file_stream);
     fill_level_in_puffer = strlen((char*) in_puffer);
@@ -154,13 +153,12 @@ extern EXIT_CODES open_infile(char *in_filename)
     if (input_file_stream == NULL)
     {
         exit_code = IO_ERROR;
-        printf("IO ERROR: Fehler beim öffnen der Eingabedatei.");
+        printf("IO ERROR: Fehler beim oeffnen der Eingabedatei.");
         exit(exit_code);
     }
     else
     {
         reset();
-//        memset(out_puffer, '\0', BUF_SIZE);
     }
 
     return exit_code;
@@ -175,7 +173,7 @@ extern EXIT_CODES open_outfile(char *out_filename)
     if (output_file_stream == NULL)
     {
         exit_code = IO_ERROR;
-        printf("IO ERROR: Fehler beim öffnen der Ausgabedatei.");
+        printf("IO ERROR: Fehler beim oeffnen der Ausgabedatei.");
         exit(exit_code);
     }
     else
@@ -216,7 +214,7 @@ extern EXIT_CODES close_outfile()
     return exit_code;
 }
 
-extern void showInfo(char *in_filename, char *out_filename, clock_t prg_start, clock_t prg_end)
+extern void show_info(char *in_filename, char *out_filename, clock_t prg_start, clock_t prg_end)
 {
     printf("Ausfuehrungsstatistik\n");
     struct stat attribut;

@@ -78,13 +78,14 @@ int main(int argc, char** argv)
     
     
     
-    char in_filename[MAX_FILENAME_LENGTH] = {'\0'};
-    char out_filename[MAX_FILENAME_LENGTH] = {'\0'};
-    strncpy(in_filename, input_filename, strlen(input_filename));
-    strncpy(out_filename, output_filename, strlen(output_filename));
+//    char in_filename[MAX_FILENAME_LENGTH] = {'\0'};
+//    char out_filename[MAX_FILENAME_LENGTH] = {'\0'};
+//    strncpy(in_filename, input_filename, strlen(input_filename));
+//    strncpy(out_filename, output_filename, strlen(output_filename));
 
     if (exit_code == SUCCESS_RUN)
     {
+        printf("o: %s", output_filename);
 
         if (compressed && !help)
         {
@@ -101,7 +102,7 @@ int main(int argc, char** argv)
 
     if (info && (compressed || decompressed) && is_input_filename)
     {
-        showInfo(in_filename, out_filename, prg_start, prg_end);
+        show_info(input_filename, output_filename, prg_start, prg_end);
     }
 
     printf("Program terminated with exit code %d.\n", exit_code);

@@ -44,7 +44,7 @@ extern EXIT_CODES process_arguments(int argc, char*** argv,
 /**
  * Gibt Informationen über die Programmbenutzung am Bildschirm aus.
  */
-extern void showHelp();
+extern void show_help();
 
 #endif
 
