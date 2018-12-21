@@ -105,7 +105,6 @@ int main(int argc, char** argv)
     else {
         printf("Korrekte Eingabe, Programmende mit Exitcode %d.\n", exit_code);
     }
-    
 
     return (exit_code);
 }

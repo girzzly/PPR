@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['open_5finfile',['open_infile',['../a00017.html#a08f0c118de3b355746a912a3e9a6507c',1,'open_infile(char *in_filename):&#160;io.c'],['../a00020.html#a08f0c118de3b355746a912a3e9a6507c',1,'open_infile(char *in_filename):&#160;io.c']]],
-  ['open_5foutfile',['open_outfile',['../a00017.html#afa909149260b3430c94d04d1e86a5650',1,'open_outfile(char *out_filename):&#160;io.c'],['../a00020.html#afa909149260b3430c94d04d1e86a5650',1,'open_outfile(char *out_filename):&#160;io.c']]]
+  ['process_5farguments',['process_arguments',['../a00002.html#ac8feedeb5be94bbc5622eb9aceec3896',1,'process_arguments(int argc, char ***argv, bool *compressed, bool *decompressed, bool *info, bool *help, bool *level, int *level_number, bool *output_comand, bool *is_input_filename, char **output_filename, char **input_filename):&#160;argument_validation.c'],['../a00005.html#ac8feedeb5be94bbc5622eb9aceec3896',1,'process_arguments(int argc, char ***argv, bool *compressed, bool *decompressed, bool *info, bool *help, bool *level, int *level_number, bool *output_comand, bool *is_input_filename, char **output_filename, char **input_filename):&#160;argument_validation.c']]]
 ];

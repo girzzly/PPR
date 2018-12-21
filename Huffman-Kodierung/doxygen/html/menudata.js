@@ -36,7 +36,6 @@ var menudata={children:[
 {text:"g",url:"globals.html#index_g"},
 {text:"h",url:"globals.html#index_h"},
 {text:"i",url:"globals.html#index_i"},
-{text:"l",url:"globals.html#index_l"},
 {text:"m",url:"globals.html#index_m"},
 {text:"o",url:"globals.html#index_o"},
 {text:"p",url:"globals.html#index_p"},
@@ -48,7 +47,6 @@ var menudata={children:[
 {text:"Funktionen",url:"globals_func.html",children:[
 {text:"c",url:"globals_func.html#index_c"},
 {text:"d",url:"globals_func.html#index_d"},
-{text:"g",url:"globals_func.html#index_g"},
 {text:"h",url:"globals_func.html#index_h"},
 {text:"m",url:"globals_func.html#index_m"},
 {text:"o",url:"globals_func.html#index_o"},
@@ -56,15 +54,7 @@ var menudata={children:[
 {text:"r",url:"globals_func.html#index_r"},
 {text:"s",url:"globals_func.html#index_s"},
 {text:"w",url:"globals_func.html#index_w"}]},
-{text:"Variablen",url:"globals_vars.html",children:[
-{text:"c",url:"globals_vars.html#index_c"},
-{text:"d",url:"globals_vars.html#index_d"},
-{text:"f",url:"globals_vars.html#index_f"},
-{text:"h",url:"globals_vars.html#index_h"},
-{text:"i",url:"globals_vars.html#index_i"},
-{text:"l",url:"globals_vars.html#index_l"},
-{text:"o",url:"globals_vars.html#index_o"},
-{text:"p",url:"globals_vars.html#index_p"}]},
+{text:"Variablen",url:"globals_vars.html"},
 {text:"Aufzählungen",url:"globals_enum.html"},
 {text:"Aufzählungswerte",url:"globals_eval.html"},
 {text:"Makrodefinitionen",url:"globals_defs.html"}]}]}]}

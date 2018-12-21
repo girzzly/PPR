@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['main',['main',['../a00023.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.c']]],
-  ['main_2ec',['main.c',['../a00023.html',1,'']]],
-  ['max_5ffilename_5flength',['MAX_FILENAME_LENGTH',['../a00020.html#a6773b93f3093658c3dcb569de3b4bdb2',1,'io.h']]]
+  ['off',['OFF',['../a00014.html#a42de1d3bbaa4989a0bb0ea5c6923dccbaac132f2982b98bcaa3445e535a03ff75',1,'huffmann_common.h']]],
+  ['on',['ON',['../a00014.html#a42de1d3bbaa4989a0bb0ea5c6923dccba977d478dacaae531f95695750d1e9d03',1,'huffmann_common.h']]],
+  ['open_5finfile',['open_infile',['../a00017.html#a08f0c118de3b355746a912a3e9a6507c',1,'open_infile(char *in_filename):&#160;io.c'],['../a00020.html#a08f0c118de3b355746a912a3e9a6507c',1,'open_infile(char *in_filename):&#160;io.c']]],
+  ['open_5foutfile',['open_outfile',['../a00017.html#afa909149260b3430c94d04d1e86a5650',1,'open_outfile(char *out_filename):&#160;io.c'],['../a00020.html#afa909149260b3430c94d04d1e86a5650',1,'open_outfile(char *out_filename):&#160;io.c']]],
+  ['out_5fpuffer',['out_puffer',['../a00017.html#ac9ebd992f20f5e7d5175646ab0b20c6e',1,'io.c']]],
+  ['output_5ffile_5fstream',['output_file_stream',['../a00017.html#ae268bac3168d47478f3787553787d658',1,'io.c']]]
 ];

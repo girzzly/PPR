@@ -1,0 +1,6 @@
+<map id="has_next_char" name="has_next_char">
+<area shape="rect" id="node2" href="$a00017.html#a35e7050eb6d0826f027841fe12109a47" title="manage_file" alt="" coords="159,31,251,57"/>
+<area shape="rect" id="node3" href="$a00017.html#ac77451d71a3a5322bc573aee5e64c465" title="write_block" alt="" coords="313,5,399,32"/>
+<area shape="rect" id="node4" href="$a00017.html#abf3a4beebe80248049a835c0299f05c3" title="read_next_block" alt="" coords="299,56,413,83"/>
+<area shape="rect" id="node5" href="$a00017.html#aebbba89eb574f823428be75d0ffc10c9" title="reset" alt="" coords="461,56,512,83"/>
+</map>
