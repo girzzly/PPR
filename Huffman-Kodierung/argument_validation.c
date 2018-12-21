@@ -106,16 +106,16 @@ extern EXIT_CODES process_arguments(int argc, char*** argv,
                         else
                         {
                             // wrong level_number!
-                            level = false;
-                            level_number = 0;
+                            *level = false;
+                            *level_number = 0;
                             exit_code = ARGUMENTS_ERROR;
                         }
                     }
                     else
                     {
                         // no level_number!
-                        level = false;
-                        level_number = 0;
+                        *level = false;
+                        *level_number = 0;
                         exit_code = ARGUMENTS_ERROR;
                     }
                 }
@@ -143,6 +143,7 @@ extern EXIT_CODES process_arguments(int argc, char*** argv,
         *level = false;
         *level_number = 0;
     }
+    
     if (*output_comand == false)
     {       
         *output_filename = malloc((strlen(*input_filename) + 4) * sizeof (char));
@@ -156,8 +157,18 @@ extern EXIT_CODES process_arguments(int argc, char*** argv,
         else
         {
             strncat(*output_filename, ".hc", strlen(*output_filename));
+        } 
+    } 
+    else {
+        if (strcmp(*input_filename, *output_filename) == 0) // output and input have same names!
+        {
+            exit_code = ARGUMENTS_ERROR;
         }
-        
+    }
+    
+    if(fopen(*input_filename, "rb") == NULL) // file does not exists!
+    {
+        exit_code = ARGUMENTS_ERROR;
     }
 
     if (*help || (exit_code == SUCCESS_RUN && (*decompressed || *compressed) && *is_input_filename))
@@ -190,10 +201,10 @@ extern EXIT_CODES process_arguments(int argc, char*** argv,
 
 extern void show_help()
 {
-    printf("Usage: huffmann_kodierung [OPTIONS]... [FILENAME]...\n"
+    printf("Benutzung: huffmann_kodierung [OPTIONS]... [FILENAME]...\n"
            "Komprimiert oder Dekomprimiert Textdatein\nim Sinne der Huffman-Kodierung.\n\n"
 
-           "Arguments:\n"
+           "Argumente:\n"
            "\t-c\tDie Eingabedatei wird komprimiert.\n\n"
            "\t-d\tDie Eingabedatei wird dekomprimiert.\n\n"
 
@@ -217,7 +228,7 @@ extern void show_help()
 
            "\t<filename>\tName der Eingabedatei.\n\n"
 
-           "Exsamples:\n"
+           "Beispiele:\n"
            "\thuffman_codierung -h\n"
            "\thuffman_codierung -d <filename>\n"
            "\thuffman_codierung -c -v -l3 -o <outputfilename> <inputfilename>\n\n");

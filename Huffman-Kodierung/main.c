@@ -98,7 +98,14 @@ int main(int argc, char** argv)
         show_info(input_filename, output_filename, prg_start, prg_end);
     }
 
-    printf("Program terminated with exit code %d.\n", exit_code);
+    if(exit_code != SUCCESS_RUN)
+    {
+        printf("Fehlermeldung, Programmabbruch mit Fehlercode %d.\n", exit_code);
+    }
+    else {
+        printf("Korrekte Eingabe, Programmende mit Exitcode %d.\n", exit_code);
+    }
+    
 
     return (exit_code);
 }
