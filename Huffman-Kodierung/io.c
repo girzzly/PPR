@@ -14,13 +14,6 @@
 #include <stdbool.h>
 #include <string.h>
 
-#ifdef __unix__
-#include <sys/stat.h>
-#else
-#include <sys\stat.h>
-#endif
-#include <time.h>
-
 #include "huffmann_common.h"
 #include "io.h"
 
