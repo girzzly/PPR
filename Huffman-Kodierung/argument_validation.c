@@ -168,7 +168,7 @@ extern EXIT_CODES process_arguments(int argc, char*** argv,
     
     if(fopen(*input_filename, "rb") == NULL) // file does not exists!
     {
-        exit_code = ARGUMENTS_ERROR;
+        exit_code = IO_ERROR;
     }
 
     if (*help || (exit_code == SUCCESS_RUN && (*decompressed || *compressed) && *is_input_filename))
