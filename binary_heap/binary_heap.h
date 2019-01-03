@@ -13,7 +13,10 @@
 /** Funktions-Typdefinition für Funktion comp. */
 typedef void (*HEAP_ELEM_PRINT) (void*);
 
-/** Funktions-Typdefinition für Funktion print. */
+/** 
+ * Funktions-Typdefinition für Funktion print.
+ * 
+ */
 typedef int (*HEAP_ELEM_COMP) (void*, void*);
 
 /**

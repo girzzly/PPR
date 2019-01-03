@@ -10,17 +10,17 @@
 #include "binary_heap.h"
 
 /** Der tatsächliche Füllstand des Heaps. */
-#define FILL_LEVEL heap_size - free_space
+#define FILL_LEVEL heap_size - heap_free_space
 
 
 /** Schrittgröße für die Erweiterung des Speichers für den Heap. */
-static int resize_size = 5;
+static int heap_resize = 5;
 
 /** Heapgröße. */
 static int heap_size = 0;
 
 /** Freie Speicherelemente im Heap. */
-static int free_space = 0;
+static int heap_free_space = 0;
 
 /** Heap durch ein Array aus void Zeigern (void *heap[]). */
 static void **heap;
@@ -71,10 +71,10 @@ extern void heap_init(HEAP_ELEM_COMP comp, HEAP_ELEM_PRINT print)
     comp_elements = comp;
     print_element = print;
 
-    heap = malloc(resize_size * sizeof (void*));
+    heap = malloc(heap_resize * sizeof (void*));
 
-    heap_size = resize_size;
-    free_space = resize_size;
+    heap_size = heap_resize;
+    heap_free_space = heap_resize;
 }
 
 extern void heap_destroy(void)
@@ -83,32 +83,33 @@ extern void heap_destroy(void)
     heap = NULL;
 }
 
-extern void heap_insert(void *e)
+extern void heap_insert(void *element)
 {
     int i;
 
-    if (free_space == 0)
+    if (heap_free_space == 0)
     {
-        void** temp_p;
-        temp_p = realloc(heap, (heap_size + resize_size) * sizeof *heap);
+        void** p_temp;
+        p_temp = realloc(heap, (heap_size + heap_resize) * sizeof *heap);
 
-        if (temp_p != NULL)
+        if (p_temp != NULL)
         {
-            free_space = resize_size;
-            heap_size += free_space;
-            heap = temp_p;
+            heap_free_space = heap_resize;
+            heap_size = heap_size + heap_free_space;
+            heap = p_temp;
         }
         else
         {
-            exit(1);
+            printf("Can not resize Heap.\n");
+            exit(EXIT_FAILURE);
         }
     }
 
-    free_space--;
+    heap_free_space--;
     
     i = FILL_LEVEL - 1;
     
-    heap[i] = e;
+    heap[i] = element;
 
     while (i != 0 && comp_elements(heap[parent(i)], heap[i]) == 1)
     {
@@ -120,40 +121,41 @@ extern void heap_insert(void *e)
 
 extern bool heap_extract_min(void **min_element)
 {
-
+    
     if (FILL_LEVEL <= 0)
     {
         return false;
     }
     else if (FILL_LEVEL == 1)
     {
-        free_space++;
+        heap_free_space++;
         *min_element = heap[0];
         
         return true;
     }
 
-    if (free_space == resize_size)
+    if (heap_free_space == heap_resize)
     {
         void **temp_p;
         temp_p = realloc(heap, (FILL_LEVEL) * sizeof *heap);
         
         if (temp_p != NULL)
         {
-            free_space = 0;
-            heap_size -= resize_size;
+            heap_free_space = 0;
+            heap_size -= heap_resize;
             heap = temp_p;
         }
         else
         {
-            exit(1);
+            printf("Can not resize Heap.\n");
+            exit(EXIT_FAILURE);
         }
     }
 
     *min_element = heap[0];
     heap[0] = heap[FILL_LEVEL - 1];
     
-    free_space++;
+    heap_free_space++;
     
     min_heapify(0);
 

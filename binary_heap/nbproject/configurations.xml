@@ -39,6 +39,7 @@
       <compileType>
         <cTool>
           <standard>3</standard>
+          <commandLine>-Wall</commandLine>
         </cTool>
       </compileType>
       <item path="binary_heap.c" ex="false" tool="0" flavor2="0">
