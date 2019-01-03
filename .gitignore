@@ -12,3 +12,5 @@ nbdist/
 
 # End of https://www.gitignore.io/api/netbeans
 Huffman-Kodierung/Huffman-Kodierung\.zip
+
+*.zip
