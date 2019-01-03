@@ -51,8 +51,10 @@ int main(int argc, char** argv) {
 
     for (i = 0; i < (int) strlen(elements); i++) {
         heap_insert(&elements[i]);
-    }
-   
+    } 
+    
+    heap_print();
+    
     i = 0;
     while (heap_extract_min((void **) &letter))
     {
@@ -66,6 +68,8 @@ int main(int argc, char** argv) {
     printf("Test %s\n", (passed) ? "passed" : "failed");
     printf("Result: %s\n", result);
     printf("Expected: %s\n", expected);
+    
+    heap_destroy();
  
     return (EXIT_SUCCESS);
 }

@@ -34,9 +34,9 @@ static HEAP_ELEM_PRINT print_element;
 /**
  * Diese Funktion Minimiert den Heap.
  * 
- * @param i
+ * @param root    Die Wurzel von der aus der Heap minimiert werden soll.
  */
-static void min_heapify(int i);
+static void min_heapify(int root);
 
 /**
  * Diese Funktion gibt das linke Kind eines Knotens aus.
@@ -64,6 +64,14 @@ static int right_child(int x);
  * @return      Liefert den Wurzelknoten eines Kindknotens zurück. 
  */
 static int parent(int x);
+
+/**
+ * Diese Methode baut rekusiv den Ausgabebaum auf,
+ * ausgehend von der übergebenen Wurzel.
+ * 
+ * @param root  Wurzel von der aus ausgegeben wird.
+ */
+static void print(int root);
 
 
 extern void heap_init(HEAP_ELEM_COMP comp, HEAP_ELEM_PRINT print)
@@ -106,9 +114,9 @@ extern void heap_insert(void *element)
     }
 
     heap_free_space--;
-    
+
     i = FILL_LEVEL - 1;
-    
+
     heap[i] = element;
 
     while (i != 0 && comp_elements(heap[parent(i)], heap[i]) == 1)
@@ -121,7 +129,7 @@ extern void heap_insert(void *element)
 
 extern bool heap_extract_min(void **min_element)
 {
-    
+
     if (FILL_LEVEL <= 0)
     {
         return false;
@@ -130,7 +138,7 @@ extern bool heap_extract_min(void **min_element)
     {
         heap_free_space++;
         *min_element = heap[0];
-        
+
         return true;
     }
 
@@ -138,7 +146,7 @@ extern bool heap_extract_min(void **min_element)
     {
         void **temp_p;
         temp_p = realloc(heap, (FILL_LEVEL) * sizeof *heap);
-        
+
         if (temp_p != NULL)
         {
             heap_free_space = 0;
@@ -154,9 +162,9 @@ extern bool heap_extract_min(void **min_element)
 
     *min_element = heap[0];
     heap[0] = heap[FILL_LEVEL - 1];
-    
+
     heap_free_space++;
-    
+
     min_heapify(0);
 
     return true;
@@ -164,19 +172,26 @@ extern bool heap_extract_min(void **min_element)
 
 extern void heap_print(void)
 {
-
-    // TO do.
-
+    
+    if (FILL_LEVEL > 0)
+    {
+        printf("Heap: (%d) Elements.\n", FILL_LEVEL);
+        print(0);
+    }
+    else
+    {
+        printf("Heap is empty.");
+    }
 }
 
-static void min_heapify(int i)
+static void min_heapify(int root)
 {
-    int smallest = i;
-    
-    int left = left_child(i);
-    int right = right_child(i);
+    int smallest = root;
 
-    if (left < FILL_LEVEL && comp_elements(heap[left], heap[i]) == -1)
+    int left = left_child(root);
+    int right = right_child(root);
+
+    if (left < FILL_LEVEL && comp_elements(heap[left], heap[root]) == -1)
     {
         smallest = left;
     }
@@ -186,12 +201,12 @@ static void min_heapify(int i)
         smallest = right;
     }
 
-    if (smallest != i)
+    if (smallest != root)
     {
-        void *temp = heap[i];
-        heap[i] = heap[smallest];
+        void *temp = heap[root];
+        heap[root] = heap[smallest];
         heap[smallest] = temp;
-        
+
         min_heapify(smallest);
     }
 }
@@ -209,5 +224,28 @@ static int right_child(int x)
 static int parent(int x)
 {
     return (x - 1) / 2;
+}
+
+static void print(int root)
+{
+    int j;
+    for (j = root; j > 0; j = parent(j))
+    {
+        printf("    ");
+    }
+    
+    printf("|--");
+    print_element(heap[root]);
+    printf("\n");
+
+    if (left_child(root) < FILL_LEVEL)
+    {
+        print(left_child(root));
+    }
+
+    if (right_child(root) < FILL_LEVEL)
+    {
+        print(right_child(root));
+    }
 }
 
