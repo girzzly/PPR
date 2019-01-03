@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>binary_heap.h-Dateireferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">Typdefinitionen</a> &#124;
+<a href="#func-members">Funktionen</a>  </div>
+  <div class="headertitle">
+<div class="title">binary_heap.h-Dateireferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include-Abhängigkeitsdiagramm für binary_heap.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00006.png" border="0" usemap="#binary__heap_8h" alt=""/></div>
+<map name="binary__heap_8h" id="binary__heap_8h">
+</map>
+</div>
+</div>
+<p><a href="a00005_source.html">gehe zum Quellcode dieser Datei</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typdefinitionen</h2></td></tr>
+<tr class="memitem:a57cd1482802fa531428af2c3f58834e9"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#a57cd1482802fa531428af2c3f58834e9">HEAP_ELEM_COMP</a>) (void *)</td></tr>
+<tr class="separator:a57cd1482802fa531428af2c3f58834e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6ef1a0d82308b0ec040752807e572eb"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#aa6ef1a0d82308b0ec040752807e572eb">HEAP_ELEM_PRINT</a>) (void *)</td></tr>
+<tr class="separator:aa6ef1a0d82308b0ec040752807e572eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktionen</h2></td></tr>
+<tr class="memitem:a73501d9fec3af4733fe63a8b261eddf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#a73501d9fec3af4733fe63a8b261eddf9">heap_init</a> (<a class="el" href="a00005.html#a57cd1482802fa531428af2c3f58834e9">HEAP_ELEM_COMP</a> <a class="el" href="a00005.html#af5c48c2a2192c52f6c7b96d7479346a9">comp</a>, <a class="el" href="a00005.html#aa6ef1a0d82308b0ec040752807e572eb">HEAP_ELEM_PRINT</a> <a class="el" href="a00005.html#ac08c5ab74b9c486a1fbeba4d52c7aeca">print</a>)</td></tr>
+<tr class="separator:a73501d9fec3af4733fe63a8b261eddf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ca586c20b4c127908a5258934f0c68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#aa0ca586c20b4c127908a5258934f0c68">heap_destroy</a> (void)</td></tr>
+<tr class="separator:aa0ca586c20b4c127908a5258934f0c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a532c06eeef1ea18a1f0e5a33cfdb5715"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#a532c06eeef1ea18a1f0e5a33cfdb5715">heap_insert</a> (void *element)</td></tr>
+<tr class="separator:a532c06eeef1ea18a1f0e5a33cfdb5715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a067229850f600a23a23cb9487a5a84b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#a067229850f600a23a23cb9487a5a84b0">heap_extract_min</a> (void **min_element)</td></tr>
+<tr class="separator:a067229850f600a23a23cb9487a5a84b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae711d7cf7a596f9c8cda072759e90b9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#ae711d7cf7a596f9c8cda072759e90b9d">heap_print</a> (void)</td></tr>
+<tr class="separator:ae711d7cf7a596f9c8cda072759e90b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c48c2a2192c52f6c7b96d7479346a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#af5c48c2a2192c52f6c7b96d7479346a9">comp</a> (char *c1, char *c2)</td></tr>
+<tr class="separator:af5c48c2a2192c52f6c7b96d7479346a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac08c5ab74b9c486a1fbeba4d52c7aeca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#ac08c5ab74b9c486a1fbeba4d52c7aeca">print</a> (char *c)</td></tr>
+<tr class="separator:ac08c5ab74b9c486a1fbeba4d52c7aeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><dl class="section author"><dt>Autor</dt><dd>Dominik Krakau</dd></dl>
+<dl class="section date"><dt>Datum</dt><dd>2019-01-02 </dd></dl>
+</div><h2 class="groupheader">Dokumentation der benutzerdefinierten Typen</h2>
+<a id="a57cd1482802fa531428af2c3f58834e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57cd1482802fa531428af2c3f58834e9">&#9670;&nbsp;</a></span>HEAP_ELEM_COMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* HEAP_ELEM_COMP) (void *)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funktions-Typdefinition für Funktion comp. </p>
+
+</div>
+</div>
+<a id="aa6ef1a0d82308b0ec040752807e572eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6ef1a0d82308b0ec040752807e572eb">&#9670;&nbsp;</a></span>HEAP_ELEM_PRINT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* HEAP_ELEM_PRINT) (void *)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funktions-Typdefinition für Funktion print. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Funktionen</h2>
+<a id="af5c48c2a2192c52f6c7b96d7479346a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c48c2a2192c52f6c7b96d7479346a9">&#9670;&nbsp;</a></span>comp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int comp </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Diese Funktion vergleicht zwei Zeichen.</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c1</td><td>Das erste Zeichen.</td></tr>
+    <tr><td class="paramname">c2</td><td>Das zweite Zeichen.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Liefert 0, wenn beide Zeichen gleich sind; 1, wenn c1 größer ist als c2; -1, wenn c1 kleiner ist als c2. </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00005_af5c48c2a2192c52f6c7b96d7479346a9_icgraph.png" border="0" usemap="#a00005_af5c48c2a2192c52f6c7b96d7479346a9_icgraph" alt=""/></div>
+<map name="a00005_af5c48c2a2192c52f6c7b96d7479346a9_icgraph" id="a00005_af5c48c2a2192c52f6c7b96d7479346a9_icgraph">
+<area shape="rect" id="node2" href="a00008.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="107,5,157,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa0ca586c20b4c127908a5258934f0c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ca586c20b4c127908a5258934f0c68">&#9670;&nbsp;</a></span>heap_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void heap_destroy </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Diese Funktion löscht den Heap. (Gibt den Speicher wieder frei). </p>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00005_aa0ca586c20b4c127908a5258934f0c68_icgraph.png" border="0" usemap="#a00005_aa0ca586c20b4c127908a5258934f0c68_icgraph" alt=""/></div>
+<map name="a00005_aa0ca586c20b4c127908a5258934f0c68_icgraph" id="a00005_aa0ca586c20b4c127908a5258934f0c68_icgraph">
+<area shape="rect" id="node2" href="a00008.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="152,5,203,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a067229850f600a23a23cb9487a5a84b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a067229850f600a23a23cb9487a5a84b0">&#9670;&nbsp;</a></span>heap_extract_min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool heap_extract_min </td>
+          <td>(</td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>min_element</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Diese Funktion entfernt das kleinste Element aus dem Heap (dies ist immer die Wurzel des Heaps). Diese Funktion sorgt ebenfalls dafür, dass die Heap-Eigentschaft aufrechterhalten bleibt.</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min_element</td><td>Zeiger für das kleinste Element im Heap.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Liefet true, wenn ein Element erfolgreich extrahiert werden konnte, und false, wenn der Heap beim Aufruf bereits leer ist. </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00005_a067229850f600a23a23cb9487a5a84b0_icgraph.png" border="0" usemap="#a00005_a067229850f600a23a23cb9487a5a84b0_icgraph" alt=""/></div>
+<map name="a00005_a067229850f600a23a23cb9487a5a84b0_icgraph" id="a00005_a067229850f600a23a23cb9487a5a84b0_icgraph">
+<area shape="rect" id="node2" href="a00008.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="177,5,228,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a73501d9fec3af4733fe63a8b261eddf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73501d9fec3af4733fe63a8b261eddf9">&#9670;&nbsp;</a></span>heap_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void heap_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00005.html#a57cd1482802fa531428af2c3f58834e9">HEAP_ELEM_COMP</a>&#160;</td>
+          <td class="paramname"><em>comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00005.html#aa6ef1a0d82308b0ec040752807e572eb">HEAP_ELEM_PRINT</a>&#160;</td>
+          <td class="paramname"><em>print</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Diese Funktion initialisiert den Heap.</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>Funktion, mit der Heap-Elemente verglichen werden können.</td></tr>
+    <tr><td class="paramname">print</td><td>Funktion, mit der Heap-Elemente auf dem Bildschrim ausgegeben werden können. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00005_a73501d9fec3af4733fe63a8b261eddf9_icgraph.png" border="0" usemap="#a00005_a73501d9fec3af4733fe63a8b261eddf9_icgraph" alt=""/></div>
+<map name="a00005_a73501d9fec3af4733fe63a8b261eddf9_icgraph" id="a00005_a73501d9fec3af4733fe63a8b261eddf9_icgraph">
+<area shape="rect" id="node2" href="a00008.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="128,5,179,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a532c06eeef1ea18a1f0e5a33cfdb5715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a532c06eeef1ea18a1f0e5a33cfdb5715">&#9670;&nbsp;</a></span>heap_insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void heap_insert </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Diese Funktion fügt ein neues Element in den Heap ein und sorgt dafür, dass die Heap-Eigentschaft aufrechterhalten bleibt.</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>Das einzufügende Element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00005_a532c06eeef1ea18a1f0e5a33cfdb5715_icgraph.png" border="0" usemap="#a00005_a532c06eeef1ea18a1f0e5a33cfdb5715_icgraph" alt=""/></div>
+<map name="a00005_a532c06eeef1ea18a1f0e5a33cfdb5715_icgraph" id="a00005_a532c06eeef1ea18a1f0e5a33cfdb5715_icgraph">
+<area shape="rect" id="node2" href="a00008.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="143,5,193,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae711d7cf7a596f9c8cda072759e90b9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae711d7cf7a596f9c8cda072759e90b9d">&#9670;&nbsp;</a></span>heap_print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void heap_print </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Diese Funktion gibt den Heap auf dem Bildschirm aus. Die Heap-Eigentschaft muss immer erfüllt sein. </p>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00005_ae711d7cf7a596f9c8cda072759e90b9d_icgraph.png" border="0" usemap="#a00005_ae711d7cf7a596f9c8cda072759e90b9d_icgraph" alt=""/></div>
+<map name="a00005_ae711d7cf7a596f9c8cda072759e90b9d_icgraph" id="a00005_ae711d7cf7a596f9c8cda072759e90b9d_icgraph">
+<area shape="rect" id="node2" href="a00008.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="136,5,187,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac08c5ab74b9c486a1fbeba4d52c7aeca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac08c5ab74b9c486a1fbeba4d52c7aeca">&#9670;&nbsp;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Diese Funktion gibt das übergebene Zeichen als String am Bildschirm aus.</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Das übergebene Zeichen. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00005_ac08c5ab74b9c486a1fbeba4d52c7aeca_icgraph.png" border="0" usemap="#a00005_ac08c5ab74b9c486a1fbeba4d52c7aeca_icgraph" alt=""/></div>
+<map name="a00005_ac08c5ab74b9c486a1fbeba4d52c7aeca_icgraph" id="a00005_ac08c5ab74b9c486a1fbeba4d52c7aeca_icgraph">
+<area shape="rect" id="node2" href="a00008.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="101,5,152,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mit Jan 2 2019 01:56:08 von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

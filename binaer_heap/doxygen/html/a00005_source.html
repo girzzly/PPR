@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>binary_heap.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">binary_heap.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="a00005.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef BINARY_HEAP_H</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define BINARY_HEAP_H</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="a00005.html#a57cd1482802fa531428af2c3f58834e9">   16</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="a00005.html#a57cd1482802fa531428af2c3f58834e9">HEAP_ELEM_COMP</a>) (<span class="keywordtype">void</span> *);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a00005.html#aa6ef1a0d82308b0ec040752807e572eb">   21</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="a00005.html#aa6ef1a0d82308b0ec040752807e572eb">HEAP_ELEM_PRINT</a>) (<span class="keywordtype">void</span> *);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00005.html#a73501d9fec3af4733fe63a8b261eddf9">heap_init</a>(<a class="code" href="a00005.html#a57cd1482802fa531428af2c3f58834e9">HEAP_ELEM_COMP</a> <a class="code" href="a00005.html#af5c48c2a2192c52f6c7b96d7479346a9">comp</a>, <a class="code" href="a00005.html#aa6ef1a0d82308b0ec040752807e572eb">HEAP_ELEM_PRINT</a> <a class="code" href="a00005.html#ac08c5ab74b9c486a1fbeba4d52c7aeca">print</a>);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00005.html#aa0ca586c20b4c127908a5258934f0c68">heap_destroy</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00005.html#a532c06eeef1ea18a1f0e5a33cfdb5715">heap_insert</a>(<span class="keywordtype">void</span> *element);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="a00005.html#a067229850f600a23a23cb9487a5a84b0">heap_extract_min</a>(<span class="keywordtype">void</span> **min_element);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00005.html#ae711d7cf7a596f9c8cda072759e90b9d">heap_print</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="a00005.html#af5c48c2a2192c52f6c7b96d7479346a9">comp</a>(<span class="keywordtype">char</span> *c1, <span class="keywordtype">char</span> *c2);</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="a00005.html#ac08c5ab74b9c486a1fbeba4d52c7aeca">print</a>(<span class="keywordtype">char</span> *c);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div><div class="ttc" id="a00005_html_a532c06eeef1ea18a1f0e5a33cfdb5715"><div class="ttname"><a href="a00005.html#a532c06eeef1ea18a1f0e5a33cfdb5715">heap_insert</a></div><div class="ttdeci">void heap_insert(void *element)</div><div class="ttdef"><b>Definition:</b> binary_heap.c:24</div></div>
+<div class="ttc" id="a00005_html_af5c48c2a2192c52f6c7b96d7479346a9"><div class="ttname"><a href="a00005.html#af5c48c2a2192c52f6c7b96d7479346a9">comp</a></div><div class="ttdeci">int comp(char *c1, char *c2)</div><div class="ttdef"><b>Definition:</b> binary_heap.c:40</div></div>
+<div class="ttc" id="a00005_html_ac08c5ab74b9c486a1fbeba4d52c7aeca"><div class="ttname"><a href="a00005.html#ac08c5ab74b9c486a1fbeba4d52c7aeca">print</a></div><div class="ttdeci">void print(char *c)</div><div class="ttdef"><b>Definition:</b> binary_heap.c:47</div></div>
+<div class="ttc" id="a00005_html_aa0ca586c20b4c127908a5258934f0c68"><div class="ttname"><a href="a00005.html#aa0ca586c20b4c127908a5258934f0c68">heap_destroy</a></div><div class="ttdeci">void heap_destroy(void)</div><div class="ttdef"><b>Definition:</b> binary_heap.c:19</div></div>
+<div class="ttc" id="a00005_html_a73501d9fec3af4733fe63a8b261eddf9"><div class="ttname"><a href="a00005.html#a73501d9fec3af4733fe63a8b261eddf9">heap_init</a></div><div class="ttdeci">void heap_init(HEAP_ELEM_COMP comp, HEAP_ELEM_PRINT print)</div><div class="ttdef"><b>Definition:</b> binary_heap.c:14</div></div>
+<div class="ttc" id="a00005_html_ae711d7cf7a596f9c8cda072759e90b9d"><div class="ttname"><a href="a00005.html#ae711d7cf7a596f9c8cda072759e90b9d">heap_print</a></div><div class="ttdeci">void heap_print(void)</div><div class="ttdef"><b>Definition:</b> binary_heap.c:35</div></div>
+<div class="ttc" id="a00005_html_aa6ef1a0d82308b0ec040752807e572eb"><div class="ttname"><a href="a00005.html#aa6ef1a0d82308b0ec040752807e572eb">HEAP_ELEM_PRINT</a></div><div class="ttdeci">void(* HEAP_ELEM_PRINT)(void *)</div><div class="ttdef"><b>Definition:</b> binary_heap.h:21</div></div>
+<div class="ttc" id="a00005_html_a57cd1482802fa531428af2c3f58834e9"><div class="ttname"><a href="a00005.html#a57cd1482802fa531428af2c3f58834e9">HEAP_ELEM_COMP</a></div><div class="ttdeci">void(* HEAP_ELEM_COMP)(void *)</div><div class="ttdef"><b>Definition:</b> binary_heap.h:16</div></div>
+<div class="ttc" id="a00005_html_a067229850f600a23a23cb9487a5a84b0"><div class="ttname"><a href="a00005.html#a067229850f600a23a23cb9487a5a84b0">heap_extract_min</a></div><div class="ttdeci">bool heap_extract_min(void **min_element)</div><div class="ttdef"><b>Definition:</b> binary_heap.c:29</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mit Jan 2 2019 01:56:08 von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
