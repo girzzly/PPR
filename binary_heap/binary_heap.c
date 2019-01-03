@@ -12,6 +12,7 @@
 /** Der tatsächliche Füllstand des Heaps. */
 #define FILL_LEVEL heap_size - free_space
 
+
 /** Schrittgröße für die Erweiterung des Speichers für den Heap. */
 static int resize_size = 5;
 
