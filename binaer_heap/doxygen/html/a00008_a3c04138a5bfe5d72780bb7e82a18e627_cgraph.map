@@ -1,9 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node2" href="$a00002.html#a73501d9fec3af4733fe63a8b261eddf9" title="heap_init" alt="" coords="129,5,203,32"/>
-<area shape="rect" id="node3" href="$a00002.html#af5c48c2a2192c52f6c7b96d7479346a9" title="comp" alt="" coords="139,56,193,83"/>
-<area shape="rect" id="node4" href="$a00002.html#ac08c5ab74b9c486a1fbeba4d52c7aeca" title="print" alt="" coords="142,107,190,133"/>
-<area shape="rect" id="node5" href="$a00002.html#a532c06eeef1ea18a1f0e5a33cfdb5715" title="heap_insert" alt="" coords="121,157,211,184"/>
-<area shape="rect" id="node6" href="$a00002.html#ae711d7cf7a596f9c8cda072759e90b9d" title="heap_print" alt="" coords="125,208,207,235"/>
-<area shape="rect" id="node7" href="$a00002.html#a067229850f600a23a23cb9487a5a84b0" title="heap_extract_min" alt="" coords="104,259,228,285"/>
-<area shape="rect" id="node8" href="$a00002.html#aa0ca586c20b4c127908a5258934f0c68" title="heap_destroy" alt="" coords="117,309,215,336"/>
-</map>
