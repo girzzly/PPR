@@ -177,7 +177,7 @@ extern EXIT_CODES process_arguments(int argc, char*** argv,
     }
     else
     {
-        exit_code = ARGUMENTS_ERROR;
+        exit_code = (exit_code == IO_ERROR) ? IO_ERROR : ARGUMENTS_ERROR;
     }
 
     if (*help)
