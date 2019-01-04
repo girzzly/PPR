@@ -4,6 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>btree.h</itemPath>
+      <itemPath>btreenode.h</itemPath>
+      <itemPath>frequency.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +15,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>btree.c</itemPath>
+      <itemPath>btreenode.c</itemPath>
+      <itemPath>frequency.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -36,6 +42,18 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="btree.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="btree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="btreenode.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="btreenode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="frequency.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="frequency.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
@@ -59,6 +77,18 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="btree.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="btree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="btreenode.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="btreenode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="frequency.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="frequency.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
