@@ -44,9 +44,6 @@ int main(int argc, char** argv) {
     char *elements = "Donaudampfschifffahrtsgesellschaftskapitaen";
     char *expected = "Daaaaaaccdeeefffffghhhiikllmnnopprssssstttu";
     
-//    char *elements = "pnjbaigcdh";
-//    char *expected = "hdcgiabjnp";
-    
     char *letter = NULL;
     char result[100];
 
