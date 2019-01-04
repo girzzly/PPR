@@ -41,8 +41,11 @@ int main(int argc, char** argv) {
     bool passed;
     int i;
     
-    char *elements = "abcdefgijnhp";
-    char *expected = "abcdefghijnp";
+    char *elements = "Donaudampfschifffahrtsgesellschaftskapitaen";
+    char *expected = "Daaaaaaccdeeefffffghhhiikllmnnopprssssstttu";
+    
+//    char *elements = "pnjbaigcdh";
+//    char *expected = "hdcgiabjnp";
     
     char *letter = NULL;
     char result[100];

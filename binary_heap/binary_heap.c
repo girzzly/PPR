@@ -124,6 +124,8 @@ extern void heap_insert(void *element)
         void *temp = heap[i];
         heap[i] = heap[parent(i)];
         heap[parent(i)] = temp;
+        
+        i = parent(i);
     }
 }
 
@@ -150,7 +152,7 @@ extern bool heap_extract_min(void **min_element)
         if (temp_p != NULL)
         {
             heap_free_space = 0;
-            heap_size -= heap_resize;
+            heap_size = heap_size - heap_resize;
             heap = temp_p;
         }
         else
