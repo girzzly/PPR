@@ -250,4 +250,3 @@ static void print(int root)
         print(right_child(root));
     }
 }
-
