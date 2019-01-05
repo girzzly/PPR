@@ -19,11 +19,11 @@
 #include "io.h"
 
 extern EXIT_CODES process_arguments(int argc, char*** argv,
-                             bool *compressed, bool *decompressed,
-                             bool *info, bool *help,
-                             bool *level, int *level_number,
-                             bool *output_comand, bool *is_input_filename,
-                             char **output_filename, char **input_filename)
+                                    bool *compressed, bool *decompressed,
+                                    bool *info, bool *help,
+                                    bool *level, int *level_number,
+                                    bool *output_comand, bool *is_input_filename,
+                                    char **output_filename, char **input_filename)
 {
 
     EXIT_CODES exit_code = SUCCESS_RUN;
@@ -143,9 +143,9 @@ extern EXIT_CODES process_arguments(int argc, char*** argv,
         *level = false;
         *level_number = 0;
     }
-    
+
     if (*output_comand == false)
-    {       
+    {
         *output_filename = malloc((strlen(*input_filename) + 4) * sizeof (char));
         strncpy(*output_filename, *input_filename, strlen(*input_filename));
 
@@ -157,27 +157,28 @@ extern EXIT_CODES process_arguments(int argc, char*** argv,
         else
         {
             strncat(*output_filename, ".hc", strlen(*output_filename));
-        } 
-    } 
-    else {
+        }
+    }
+    else
+    {
         if (strcmp(*input_filename, *output_filename) == 0) // output and input have same names!
         {
             exit_code = ARGUMENTS_ERROR;
         }
     }
-    
-    if(fopen(*input_filename, "rb") == NULL) // file does not exists!
-    {
-        exit_code = IO_ERROR;
-    }
 
     if (*help || (exit_code == SUCCESS_RUN && (*decompressed || *compressed) && *is_input_filename))
     {
         exit_code = SUCCESS_RUN;
+
+        if (fopen(*input_filename, "rb") == NULL) // file does not exists!
+        {
+            exit_code = IO_ERROR;
+        }
     }
     else
     {
-        exit_code = (exit_code == IO_ERROR) ? IO_ERROR : ARGUMENTS_ERROR;
+        exit_code = ARGUMENTS_ERROR;
     }
 
     if (*help)
@@ -186,15 +187,15 @@ extern EXIT_CODES process_arguments(int argc, char*** argv,
     }
 
     // Debugg Hilfe
-//    printf("--------------------------------\n");
-//    printf("Compress: %d\n", *compressed);
-//    printf("Decompress: %d\n", *decompressed);
-//    printf("Level: %d   Level-Nr: %d\n", *level, *level_number);
-//    printf("Info: %d\n", *info);
-//    printf("Help: %d\n", *help);
-//    printf("Output: %d   %s\n", *output_comand, *output_filename);
-//    printf("Filename: %d   %s\n", *is_input_filename, *input_filename);
-//    printf("--------------------------------\n");
+    //    printf("--------------------------------\n");
+    //    printf("Compress: %d\n", *compressed);
+    //    printf("Decompress: %d\n", *decompressed);
+    //    printf("Level: %d   Level-Nr: %d\n", *level, *level_number);
+    //    printf("Info: %d\n", *info);
+    //    printf("Help: %d\n", *help);
+    //    printf("Output: %d   %s\n", *output_comand, *output_filename);
+    //    printf("Filename: %d   %s\n", *is_input_filename, *input_filename);
+    //    printf("--------------------------------\n");
 
     return exit_code;
 }
