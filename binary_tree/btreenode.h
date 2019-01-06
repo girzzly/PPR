@@ -46,6 +46,16 @@ extern BTREE_NODE *btreenode_new(void *data);
 extern BTREE_NODE *btreenode_clone(BTREE_NODE *node);
 
 /**
+ * Liefert true, wenn die beiden übergebenen Knoten dieselben Daten beinhalten
+ * und ihre Nachfolgerknoten ebenfalls gleich sind (bzgl. dieser Funktion).
+ * 
+ * @param node1     der erste zu vergleichende Knoten
+ * @param node2     der zweite zu vergleichende Knoten
+ * @return          true, wenn die beiden Knoten gleich sind, false sonst
+ */
+extern bool btreenode_equals(BTREE_NODE *node1, BTREE_NODE *node2);
+
+/**
  * Löscht den übergebenen Knoten und alle seine direkten und indirekten
  * Nachfolger. Im Parameter destroy_data kann eine Funktion übergeben werden,
  * mit der die Daten der Knoten gelöscht werden. Die Daten werden nicht

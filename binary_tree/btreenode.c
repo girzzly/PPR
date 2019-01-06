@@ -8,6 +8,7 @@
  */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdbool.h>
 
 #include "btree.h"
@@ -33,11 +34,19 @@ extern BTREE_NODE *btreenode_clone(BTREE_NODE *node)
     if(node != NULL)
     {
         cloned_node = btreenode_new(node->data);
-        cloned_node->left = btree_clone(node->left);
-        cloned_node->right = btree_clone(node->right);
+        cloned_node->left = btreenode_clone(node->left);
+        cloned_node->right = btreenode_clone(node->right);
     }
     
     return cloned_node;
+}
+
+bool btreenode_equals(BTREE_NODE *node1, BTREE_NODE *node2) {
+    
+    return (node1 != NULL && node2 != NULL
+            && node1->data == node2->data
+            && node1->left == node2->left
+            && node1->right == node2->right);
 }
 
 
@@ -95,11 +104,9 @@ extern bool btreenode_set_left(BTREE_NODE *parent_node, BTREE_NODE *node)
     
     bool has_parent_left_node = parent_node->left == NULL;
     
-    if (!has_parent_left_node)
+    if (has_parent_left_node)
     {
-        BTREE_NODE *left_node = malloc(sizeof (BTREE_NODE));
-        CHECK_NODE(left_node);
-        left_node->left = node;
+        parent_node->left = node;
     }
 
     return has_parent_left_node;
@@ -112,11 +119,9 @@ extern bool btreenode_set_right(BTREE_NODE *parent_node, BTREE_NODE *node)
     
     bool has_parent_right_node = parent_node->right == NULL;
     
-    if (!has_parent_right_node)
+    if (has_parent_right_node)
     {
-        BTREE_NODE *right_node = malloc(sizeof (BTREE_NODE));
-        CHECK_NODE(right_node);
-        right_node->left = node;
+        parent_node->right = node;
     }
 
     return has_parent_right_node;
@@ -126,11 +131,13 @@ extern void btreenode_print(BTREE_NODE *node, PRINT_DATA_FCT print_data)
 {
     if(node != NULL)
     {
-        printf("(%p)", (void *) node);
+        printf("(%p", (void *) node);
         
         if(print_data != NULL)
         {
             print_data(node->data);
         }
+        
+        printf(")");
     }
 }

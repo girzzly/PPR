@@ -18,9 +18,7 @@
  * Definition eines Baums.
  */
 typedef struct _BTREE
-{
-    int size;
-    
+{   
     DESTROY_DATA_FCT destroy_data;
     PRINT_DATA_FCT print;
     
